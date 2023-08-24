@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
-class Modality extends Model
+class Authors extends Model
 {
     use HasFactory, Sluggable, HasSEO;
 
     public $fillable = [
         'name',
-        'description',
+        'biography',
     ];
 
     public function sluggable(): array
@@ -25,8 +25,8 @@ class Modality extends Model
         ];
     }
 
-    public function authors()
+    public function modalities()
     {
-        return $this->belongsToMany(Authors::class, 'authors_modalities', 'modality_id', 'author_id')->withTimestamps();
+        return $this->belongsToMany(Modality::class, 'authors_modalities', 'author_id', 'modality_id')->withTimestamps();
     }
 }
