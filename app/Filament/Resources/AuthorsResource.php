@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AuthorsResource\Pages;
-use App\Models\Authors;
+use App\Models\Author;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,7 +13,7 @@ use RalphJSmit\Filament\SEO\SEO;
 
 class AuthorsResource extends Resource
 {
-    protected static ?string $model = Authors::class;
+    protected static ?string $model = Author::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
@@ -32,6 +32,7 @@ class AuthorsResource extends Resource
                 Forms\Components\Section::make()->columns(3)->schema([
                     Forms\Components\TextInput::make('name')
                         ->label('Nombre')
+                        ->unique(table: Author::class, ignoreRecord: true)
                         ->required()
                         ->maxLength(255),
                     Forms\Components\Select::make('modalities')
@@ -39,7 +40,7 @@ class AuthorsResource extends Resource
                         ->multiple()
                         ->relationship(name: 'modalities', titleAttribute: 'name')
                         ->preload()
-                        ->hiddenOn('create'),
+                        ->required(),
                     Forms\Components\TextInput::make('slug')
                         ->label('URL')
                         ->required()

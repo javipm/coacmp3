@@ -32,6 +32,7 @@ class ModalityResource extends Resource
                 Forms\Components\Section::make()->columns(2)->schema([
                     Forms\Components\TextInput::make('name')
                         ->label('Nombre')
+                        ->unique(table: Modality::class, ignoreRecord: true)
                         ->required()
                         ->maxLength(255),
                     Forms\Components\TextInput::make('slug')
