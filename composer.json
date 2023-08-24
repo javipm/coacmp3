@@ -17,6 +17,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0@beta",
+        "ralphjsmit/laravel-filament-seo": "^1.2",
         "ralphjsmit/laravel-seo": "^1.4"
     },
     "require-dev": {
