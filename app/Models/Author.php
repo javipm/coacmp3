@@ -29,4 +29,14 @@ class Author extends Model
     {
         return $this->belongsToMany(Modality::class, 'authors_modalities', 'author_id', 'modality_id')->withTimestamps();
     }
+
+    public function groupsLyrics(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Group::class, 'groups_authors_lyrics', 'author_id', 'group_id')->withTimestamps();
+    }
+
+    public function groupsMusic(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Group::class, 'groups_authors_music', 'author_id', 'group_id')->withTimestamps();
+    }
 }

@@ -14,7 +14,6 @@ class Group extends Model
     public $fillable = [
         'name',
         'description',
-        'author_id',
         'modality_id',
         'year',
     ];
@@ -28,13 +27,28 @@ class Group extends Model
         ];
     }
 
-    public function author(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function groups(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasOne(Author::class, 'id', 'author_id');
+        return $this->hasMany(Group::class, 'author_id', 'id');
     }
 
     public function modality(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Modality::class, 'id', 'modality_id');
+    }
+
+    public function authorsLyrics(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Author::class, 'groups_authors_lyrics', 'group_id', 'author_id')->withTimestamps();
+    }
+
+    public function authorsMusic(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Author::class, 'groups_authors_music', 'group_id', 'author_id')->withTimestamps();
+    }
+
+    public function actings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(GroupActing::class, 'group_id', 'id');
     }
 }
