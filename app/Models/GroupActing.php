@@ -19,6 +19,13 @@ class GroupActing extends Model
         'group_id',
     ];
 
+    public const PHASES = [
+        'Preliminares' => 'Preliminares',
+        'Cuartos' => 'Cuartos',
+        'Semifinales' => 'Semifinales',
+        'Final' => 'Final',
+    ];
+
     public function sluggable(): array
     {
         return [

@@ -41,12 +41,7 @@ class GroupsActingsResource extends Resource
                         ->searchable(),
                     Forms\Components\Select::make('phase')
                         ->label('Fase')
-                        ->options([
-                            'Preliminares',
-                            'Cuartos',
-                            'Semifinales',
-                            'Final',
-                        ])
+                        ->options(GroupActing::PHASES)
                         ->required(),
                     Forms\Components\TextInput::make('filename')
                         ->label('Fichero')
@@ -67,7 +62,10 @@ class GroupsActingsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('group.name')->label('Grupo')->searchable(),
+                Tables\Columns\TextColumn::make('phase')->label('Fase')->searchable(),
+                Tables\Columns\TextColumn::make('filename')->label('Fichero'),
+                Tables\Columns\TextColumn::make('slug')->label('URL'),
             ])
             ->filters([
                 //

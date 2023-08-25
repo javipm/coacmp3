@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\GroupsResource\Pages;
+use App\Filament\Resources\GroupsResource\RelationManagers;
 use App\Models\Group;
 use App\Models\Modality;
 use Filament\Forms;
@@ -40,6 +41,20 @@ class GroupsResource extends Resource
                         ->unique(table: Group::class, ignoreRecord: true)
                         ->required()
                         ->maxLength(255),
+                    Forms\Components\TextInput::make('year')
+                        ->label('Año')
+                        ->alphaNum()
+                        ->required()
+                        ->length(4)
+                        ->columnSpan(1),
+                    Forms\Components\Select::make('modality_id')
+                        ->label('Modalidad')
+                        ->required()
+                        ->options(Modality::all()->pluck('name', 'id'))
+                        ->searchable(),
+                    Forms\Components\TextInput::make('director')
+                        ->label('Director')
+                        ->maxLength(255),
                     Forms\Components\Select::make('authors_lyrics')
                         ->label('Autores de las letras')
                         ->multiple()
@@ -52,17 +67,6 @@ class GroupsResource extends Resource
                         ->relationship(name: 'authorsMusic', titleAttribute: 'name')
                         ->preload()
                         ->required(),
-                    Forms\Components\Select::make('modality_id')
-                        ->label('Modalidad')
-                        ->required()
-                        ->options(Modality::all()->pluck('name', 'id'))
-                        ->searchable(),
-                    Forms\Components\TextInput::make('year')
-                        ->label('Año')
-                        ->alphaNum()
-                        ->required()
-                        ->length(4)
-                        ->columnSpan(1),
                     Forms\Components\TextInput::make('slug')
                         ->label('URL')
                         ->required()
@@ -83,6 +87,7 @@ class GroupsResource extends Resource
                 Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable(),
                 Tables\Columns\TextColumn::make('year')->label('Año'),
                 Tables\Columns\TextColumn::make('modality.name')->label('Modalidad'),
+                Tables\Columns\TextColumn::make('director')->label('Director'),
                 Tables\Columns\TextColumn::make('authorsLyrics.name')->label('Autores letra')->listWithLineBreaks()->searchable(),
                 Tables\Columns\TextColumn::make('authorsMusic.name')->label('Autores música')->listWithLineBreaks()->searchable(),
                 Tables\Columns\TextColumn::make('slug')->label('URL'),
@@ -113,7 +118,7 @@ class GroupsResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\ActingsRelationManager::class,
         ];
     }
 

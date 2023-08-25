@@ -27,14 +27,14 @@ class Group extends Model
         ];
     }
 
-    public function groups(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Group::class, 'author_id', 'id');
-    }
-
     public function modality(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Modality::class, 'id', 'modality_id');
+    }
+
+    public function director(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Author::class, 'id', 'director_id');
     }
 
     public function authorsLyrics(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
