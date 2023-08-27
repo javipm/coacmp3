@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Library;
+
+use App\Models\GroupActing;
+use App\Models\Modality;
+
+class ManageAudioFiles
+{
+    public static function getActings(string $path = null): array|bool
+    {
+        $files = [];
+        $errors = [];
+
+        if (! $path) {
+            return false;
+        }
+
+        $diskFiles = scandir($path, SCANDIR_SORT_ASCENDING);
+
+        //Files format is MODALITY, GROUP - PHASE.mp3
+        foreach ($diskFiles as $file) {
+            if (pathinfo($file, PATHINFO_EXTENSION) === 'mp3') {
+                $filename = pathinfo($file, PATHINFO_FILENAME);
+
+                $modality = '';
+                $group = '';
+                $phase = '';
+
+                $filenameWithSpaces = preg_replace('/_+/', ' ', $filename);
+                //Explode by first , character
+                $filenameModality = explode(',', $filenameWithSpaces, 2);
+                $modality = $filenameModality[0] ?? '';
+
+                if (isset($filenameModality[1])) {
+                    //Explode by last - character
+                    $filenamePhase = preg_split('~-(?=[^-]*$)~', $filenameModality[1]);
+                    $group = trim($filenamePhase[0]) ?? '';
+                    $phase = isset($filenamePhase[1]) ? ucwords(trim($filenamePhase[1])) : '';
+
+                    if ($phase == 'Gran Final') {
+                        $phase = 'Final';
+                    }
+                }
+
+                if (! $modality || ! $group || ! $phase) {
+                    $errors['NOT_FILLED'][] = $filename;
+
+                    continue;
+                }
+
+                $modalities = Modality::all()->pluck('name')->toArray();
+
+                if (! in_array($modality, $modalities)) {
+                    $errors['INVALID_MODALITY'][] = $filename;
+
+                    continue;
+                }
+
+                if (! in_array($phase, GroupActing::PHASES)) {
+                    $errors['INVALID_PHASE'][] = $filename;
+
+                    continue;
+                }
+
+                $files[] = [
+                    'modality' => $modality,
+                    'group' => $group,
+                    'phase' => $phase,
+                    'file' => $filename,
+                ];
+            }
+        }
+
+        return [
+            'files' => $files,
+            'errors' => $errors,
+        ];
+
+    }
+}
