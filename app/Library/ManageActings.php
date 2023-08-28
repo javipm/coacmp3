@@ -28,7 +28,7 @@ class ManageActings
                 $group->modality_id = Modality::where('name', $acting['modality'])->first()->id;
 
                 //Scrapping group info
-                $groupInfo = SearchGroupInfo::getInfo($group->name);
+                $groupInfo = SearchGroupInfo::getGroupInfo($group->name);
 
                 $group->save();
             }
