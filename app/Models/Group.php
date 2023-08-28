@@ -16,6 +16,8 @@ class Group extends Model
         'description',
         'modality_id',
         'year',
+        'director',
+        'city',
     ];
 
     public function sluggable(): array

@@ -52,9 +52,13 @@ class GroupsResource extends Resource
                         ->required()
                         ->options(Modality::all()->pluck('name', 'id'))
                         ->searchable(),
+                    Forms\Components\TextInput::make('city')
+                        ->label('Ciudad')
+                        ->maxLength(255),
                     Forms\Components\TextInput::make('director')
                         ->label('Director')
-                        ->maxLength(255),
+                        ->maxLength(255)
+                        ->columnStart(1),
                     Forms\Components\Select::make('authors_lyrics')
                         ->label('Autores de las letras')
                         ->multiple()
@@ -71,7 +75,8 @@ class GroupsResource extends Resource
                         ->label('URL')
                         ->required()
                         ->maxLength(255)
-                        ->hiddenOn('create'),
+                        ->hiddenOn('create')
+                        ->columnStart(1),
                     Forms\Components\RichEditor::make('description')->label('Descripción')->columnSpan('full'),
                 ]),
                 Forms\Components\Section::make('SEO')->schema([
@@ -88,6 +93,7 @@ class GroupsResource extends Resource
                 Tables\Columns\TextColumn::make('year')->label('Año'),
                 Tables\Columns\TextColumn::make('modality.name')->label('Modalidad'),
                 Tables\Columns\TextColumn::make('director')->label('Director'),
+                Tables\Columns\TextColumn::make('city')->label('Ciudad'),
                 Tables\Columns\TextColumn::make('authorsLyrics.name')->label('Autores letra')->listWithLineBreaks()->searchable(),
                 Tables\Columns\TextColumn::make('authorsMusic.name')->label('Autores música')->listWithLineBreaks()->searchable(),
                 Tables\Columns\TextColumn::make('slug')->label('URL'),

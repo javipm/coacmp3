@@ -49,7 +49,7 @@ class ManageAudioFiles
                 }
 
                 if (! $modality || ! $group || ! $phase) {
-                    $errors['NOT_FILLED'][] = $filename;
+                    $errors['INVALID_FILE_FORMAT'][] = $filename;
 
                     continue;
                 }

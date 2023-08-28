@@ -29,13 +29,14 @@ class RefreshActings extends Command
     {
         $path = public_path().env('APP_AUDIO_FILES', '');
         $files = ManageAudioFiles::getFiles($path);
+
         if ($files) {
             $actingsInfo = ManageAudioFiles::getInfoFromFiles($files);
             if ($actingsInfo) {
                 $actings = $actingsInfo['actings'];
                 $errors = $actingsInfo['errors'];
-                if (! ManageActings::insertActings($actings)) {
-                    throw new \Exception('Error inserting actings');
+                if ($errors_actings = ManageActings::insertActings($actings)) {
+                    $errors = array_merge($errors, $errors_actings);
                 }
             }
         }

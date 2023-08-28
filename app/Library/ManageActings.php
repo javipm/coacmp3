@@ -2,17 +2,20 @@
 
 namespace App\Library;
 
+use App\Models\Author;
 use App\Models\Group;
 use App\Models\GroupActing;
 use App\Models\Modality;
 
 class ManageActings
 {
-    public static function insertActings(array $actings): bool
+    public static function insertActings(array $actings): bool|array
     {
         if (! $actings) {
             return false;
         }
+
+        $errors = [];
 
         foreach ($actings as $acting) {
             //Check if actings is yet inserted
@@ -25,12 +28,42 @@ class ManageActings
                 $group = new Group();
                 $group->name = $acting['group'];
                 $group->year = $acting['year'];
-                $group->modality_id = Modality::where('name', $acting['modality'])->first()->id;
+                $modality = Modality::where('name', $acting['modality'])->first();
+                $group->modality_id = $modality->id;
+                $group->save();
 
                 //Scrapping group info
                 $groupInfo = SearchGroupInfo::getGroupInfo($group->name);
 
-                $group->save();
+                if ($groupInfo) {
+                    $group->city = $groupInfo['city'];
+                    $group->director = $groupInfo['director'];
+                    $group->save();
+
+                    foreach ($groupInfo['lyrics'] as $authorLyrics) {
+                        $author = Author::where('name', $authorLyrics)->first();
+                        if (! $author) {
+                            $author = new Author();
+                            $author->name = $authorLyrics;
+                            $author->save();
+                        }
+                        $author->modalities()->syncWithoutDetaching($modality->id);
+                        $group->authorsLyrics()->syncWithoutDetaching($author->id);
+                    }
+
+                    foreach ($groupInfo['music'] as $authorMusic) {
+                        $author = Author::where('name', $authorMusic)->first();
+                        if (! $author) {
+                            $author = new Author();
+                            $author->name = $authorMusic;
+                            $author->save();
+                        }
+                        $author->modalities()->syncWithoutDetaching($modality->id);
+                        $group->authorsMusic()->syncWithoutDetaching($author->id);
+                    }
+                } else {
+                    $errors['NOT_INFO_FOUND'][] = $acting['filename'];
+                }
             }
 
             $groupActing = new GroupActing();
@@ -41,6 +74,6 @@ class ManageActings
 
         }
 
-        return true;
+        return $errors;
     }
 }
