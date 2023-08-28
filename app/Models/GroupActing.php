@@ -31,6 +31,7 @@ class GroupActing extends Model
         return [
             'slug' => [
                 'source' => 'phase',
+                'unique' => false,
             ],
         ];
     }

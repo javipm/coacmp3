@@ -7,19 +7,24 @@ use App\Models\Modality;
 
 class ManageAudioFiles
 {
-    public static function getActings(string $path = null): array|bool
+    public static function getFiles(string $path = null): array|bool
     {
-        $files = [];
-        $errors = [];
-
         if (! $path) {
             return false;
         }
 
-        $diskFiles = scandir($path, SCANDIR_SORT_ASCENDING);
+        $files = scandir($path, SCANDIR_SORT_ASCENDING);
+
+        return $files;
+    }
+
+    public static function getInfoFromFiles(array $files): array|bool
+    {
+        $actings = [];
+        $errors = [];
 
         //Files format is MODALITY, GROUP - PHASE.mp3
-        foreach ($diskFiles as $file) {
+        foreach ($files as $file) {
             if (pathinfo($file, PATHINFO_EXTENSION) === 'mp3') {
                 $filename = pathinfo($file, PATHINFO_FILENAME);
 
@@ -63,19 +68,19 @@ class ManageAudioFiles
                     continue;
                 }
 
-                $files[] = [
+                $actings[] = [
                     'modality' => $modality,
                     'group' => $group,
                     'phase' => $phase,
-                    'file' => $filename,
+                    'filename' => $file,
+                    'year' => env('APP_AUDIO_YEAR', ''),
                 ];
             }
         }
 
         return [
-            'files' => $files,
+            'actings' => $actings,
             'errors' => $errors,
         ];
-
     }
 }
