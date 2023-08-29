@@ -39,7 +39,7 @@ class EditGroups extends EditRecord
                         return Notification::make()
                             ->warning()
                             ->title('Scrapeo finalizado')
-                            ->body('No se ha podido obtener la información del grupo.')
+                            ->body('No se ha podido obtener la información del grupo. Comprueba que el nombre es correcto.')
                             ->send();
                     }
 
