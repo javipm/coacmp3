@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\GroupsResource\RelationManagers;
 
+use App\Models\Group;
 use App\Models\GroupActing;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -27,6 +28,12 @@ class ActingsRelationManager extends RelationManager
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('group_id')
+                    ->label('Grupo')
+                    ->required()
+                    ->options(Group::all()->pluck('name', 'id'))
+                    ->searchable()
+                    ->columnSpan(2),
                 Forms\Components\Select::make('phase')
                     ->label('Fase')
                     ->options(GroupActing::PHASES)
