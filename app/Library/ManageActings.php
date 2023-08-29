@@ -15,6 +15,7 @@ class ManageActings
             return false;
         }
 
+        $actingsProcessed = [];
         $errors = [];
 
         foreach ($actings as $acting) {
@@ -72,8 +73,12 @@ class ManageActings
             $groupActing->group_id = $group->id;
             $groupActing->save();
 
+            $actingsProcessed[] = $acting['filename'];
         }
 
-        return $errors;
+        return [
+            'actings' => $actingsProcessed,
+            'errors' => $errors,
+        ];
     }
 }
