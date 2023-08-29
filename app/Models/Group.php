@@ -20,6 +20,8 @@ class Group extends Model
         'city',
     ];
 
+    protected $appends = ['authors_music_id', 'authors_lyrics_id'];
+
     public function sluggable(): array
     {
         return [
@@ -52,5 +54,17 @@ class Group extends Model
     public function actings(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(GroupActing::class, 'group_id', 'id');
+    }
+
+    /** Virtual attribute authors_music_id for use filament refreshFormData */
+    public function getAuthorsMusicIdAttribute(): array
+    {
+        return $this->authorsMusic()->pluck('authors.id')->toArray();
+    }
+
+    /** Virtual attribute authors_lyrics_id for use filament refreshFormData */
+    public function getAuthorsLyricsIdAttribute(): array
+    {
+        return $this->authorsLyrics()->pluck('authors.id')->toArray();
     }
 }

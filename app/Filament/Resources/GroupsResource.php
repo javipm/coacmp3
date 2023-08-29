@@ -59,18 +59,16 @@ class GroupsResource extends Resource
                         ->label('Director')
                         ->maxLength(255)
                         ->columnStart(1),
-                    Forms\Components\Select::make('authors_lyrics')
+                    Forms\Components\Select::make('authors_lyrics_id')
                         ->label('Autores de las letras')
                         ->multiple()
                         ->relationship(name: 'authorsLyrics', titleAttribute: 'name')
-                        ->preload()
-                        ->required(),
-                    Forms\Components\Select::make('authors_music')
+                        ->preload(),
+                    Forms\Components\Select::make('authors_music_id')
                         ->label('Autores de la música')
                         ->multiple()
                         ->relationship(name: 'authorsMusic', titleAttribute: 'name')
-                        ->preload()
-                        ->required(),
+                        ->preload(),
                     Forms\Components\TextInput::make('slug')
                         ->label('URL')
                         ->required()
