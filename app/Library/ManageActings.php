@@ -39,7 +39,6 @@ class ManageActings
                 if ($groupInfo) {
                     $group->city = $groupInfo['city'];
                     $group->director = $groupInfo['director'];
-                    $group->save();
 
                     foreach ($groupInfo['lyrics'] as $authorLyrics) {
                         $author = Author::where('name', $authorLyrics)->first();
@@ -62,6 +61,9 @@ class ManageActings
                         $author->modalities()->syncWithoutDetaching($modality->id);
                         $group->authorsMusic()->syncWithoutDetaching($author->id);
                     }
+
+                    $group->save();
+
                 } else {
                     $errors['NOT_INFO_FOUND'][] = $acting['filename'];
                 }

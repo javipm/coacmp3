@@ -46,7 +46,7 @@ class AuthorsResource extends Resource
                         ->required()
                         ->maxLength(255)
                         ->hiddenOn('create'),
-                    Forms\Components\RichEditor::make('biography')->label('Biografía')->columnSpan('full'),
+                    Forms\Components\RichEditor::make('biography')->fileAttachmentsDisk('public')->fileAttachmentsDirectory('authors')->label('Biografía')->columnSpan('full'),
                 ]),
                 Forms\Components\Section::make('SEO')->schema([
                     SEO::make(),

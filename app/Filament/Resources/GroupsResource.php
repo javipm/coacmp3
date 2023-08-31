@@ -29,7 +29,7 @@ class GroupsResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
-    protected static ?string $navigationGroup = 'Grupos';
+    protected static ?string $navigationGroup = 'Audios';
 
     public static function form(Form $form): Form
     {
@@ -87,6 +87,7 @@ class GroupsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\IconColumn::make('is_completed')->label('Relleno')->boolean(),
                 Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable(),
                 Tables\Columns\TextColumn::make('year')->label('Año'),
                 Tables\Columns\TextColumn::make('modality.name')->label('Modalidad'),
@@ -97,6 +98,12 @@ class GroupsResource extends Resource
                 Tables\Columns\TextColumn::make('slug')->label('URL'),
             ])
             ->filters([
+                Tables\Filters\SelectFilter::make('is_completed')
+                    ->options([
+                        true => 'Sí',
+                        false => 'No',
+                    ])
+                    ->label('Relleno'),
                 Tables\Filters\SelectFilter::make('modality_id')
                     ->multiple()
                     ->label('Modalidad')

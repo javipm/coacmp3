@@ -18,9 +18,23 @@ class Group extends Model
         'year',
         'director',
         'city',
+        'is_completed',
     ];
 
     protected $appends = ['authors_music_id', 'authors_lyrics_id'];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        self::saving(function ($model) {
+            if ($model->modality()->count() && $model->authorsLyrics()->count() && $model->authorsMusic()->count() && $model->director && $model->city) {
+                $model->is_completed = true;
+            } else {
+                $model->is_completed = false;
+            }
+        });
+    }
 
     public function sluggable(): array
     {
