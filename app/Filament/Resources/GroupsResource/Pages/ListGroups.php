@@ -16,4 +16,11 @@ class ListGroups extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            GroupsResource\Widgets\StatsOverview::class,
+        ];
+    }
 }

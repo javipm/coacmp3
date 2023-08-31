@@ -141,4 +141,11 @@ class GroupsResource extends Resource
             'edit' => Pages\EditGroups::route('/{record}/edit'),
         ];
     }
+
+    public static function getWidgets(): array
+    {
+        return [
+            GroupsResource\Widgets\StatsOverview::class,
+        ];
+    }
 }
