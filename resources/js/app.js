@@ -1,10 +1,5 @@
 import "./bootstrap";
-
-import Alpine from "alpinejs";
 import confetti from "canvas-confetti";
-
-window.Alpine = Alpine;
-Alpine.start();
 
 /** HOME CONFETTI */
 var canvas = document.getElementById("confetti");
