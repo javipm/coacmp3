@@ -1,137 +1,41 @@
-<header class=" bg-white">
-    <nav class="container mx-auto relative px-4 py-4 flex justify-between items-center">
-        <a class="text-xl font-bold leading-none flex" href="#">
-            <img class="w-14" src=" /assets/logo.png" alt="Carnaval de Cádiz audios" />
+<header class="relative container mx-auto flex items-center justify-between py-5 z-10">
+    <div class="flex flex-grow basis-0 ">
+        <a class="text-xl text-orange-700 font-bold uppercase tracking-wide flex" href="./">
+            <svg class="fill-current h-7 w-8 mr-2" fill="#000000" width="800px" height="800px" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1,16V8A1,1,0,0,1,3,8v8a1,1,0,0,1-2,0Zm7,4V4A1,1,0,0,0,6,4V20a1,1,0,0,0,2,0Zm5,2V2a1,1,0,0,0-2,0V22a1,1,0,0,0,2,0Zm5-2V4a1,1,0,0,0-2,0V20a1,1,0,0,0,2,0ZM22,7a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V8A1,1,0,0,0,22,7Z" />
+            </svg>
+            <span class="font-title">COAC Audios</span>
         </a>
-        <div class="lg:hidden">
-            <button class="navbar-burger flex items-center text-orange-600 p-3">
-                <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Mobile menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                </svg>
-            </button>
-        </div>
-        <ul
-            class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Home</a></li>
-            <li class="text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                </svg>
-            </li>
-            <li><a class="text-sm text-orange-600 font-bold" href="#">About Us</a></li>
-            <li class="text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                </svg>
-            </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Services</a></li>
-            <li class="text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                </svg>
-            </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Pricing</a></li>
-            <li class="text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                </svg>
-            </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Contact</a></li>
-        </ul>
+    </div>
 
+    <nav class="hidden lg:block sm:hidden">
+        <ul class="flex text-md mr-8
+        [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-orange-600  [&>li>a]:inline-block [&>li>a]:pl-8
+        [&>li>a]:font-title
+        [&>li>a:hover]:transition [&>li>a:hover]:text-orange-800">
+            <li><a href="#">Últimos audios</a></li>
+            <li><a href="#">Comparsas</a></li>
+            <li><a href="#">Chirigotas</a></li>
+            <li><a href="#">Coros</a></li>
+            <li><a href="#">Cuartetos</a></li>
+            <li><a href="#">Autores</a></li>
+            <li><a class="px-0" href="#">Ediciones</a></li>
+        </ul>
     </nav>
-    <div class="navbar-menu relative z-50 hidden">
-        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-        <nav
-            class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
-            <div class="flex items-center mb-8">
-                <a class="mr-auto text-3xl font-bold leading-none" href="#">
-                    <img class="w-14" src=" /assets/logo.png" alt="Carnaval de Cádiz audios" />
-                </a>
-                <button class="navbar-close">
-                    <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-            <div>
-                <ul>
-                    <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-orange-600 rounded"
-                            href="#">Home</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-orange-600 rounded"
-                            href="#">About Us</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-orange-600 rounded"
-                            href="#">Services</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-orange-600 rounded"
-                            href="#">Pricing</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-orange-600 rounded"
-                            href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+
+    <div class="flex basis-0 justify-end">
+        <span class="h-6 w-6 text-orange-600 cursor-pointer">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path
+                        d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+        </span>
     </div>
 </header>
-
-<script>
-    // Burger menus
-document.addEventListener('DOMContentLoaded', function() {
-    // open
-    const burger = document.querySelectorAll('.navbar-burger');
-    const menu = document.querySelectorAll('.navbar-menu');
-
-    if (burger.length && menu.length) {
-        for (var i = 0; i < burger.length; i++) {
-            burger[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('hidden');
-                }
-            });
-        }
-    }
-
-    // close
-    const close = document.querySelectorAll('.navbar-close');
-    const backdrop = document.querySelectorAll('.navbar-backdrop');
-
-    if (close.length) {
-        for (var i = 0; i < close.length; i++) {
-            close[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('hidden');
-                }
-            });
-        }
-    }
-
-    if (backdrop.length) {
-        for (var i = 0; i < backdrop.length; i++) {
-            backdrop[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('hidden');
-                }
-            });
-        }
-    }
-});
-</script>

@@ -7,11 +7,21 @@
     @vite('resources/css/app.css')
 </head>
 
-<x-header />
 
-<body class="bg-orange-50">
-    {{ $slot }}
-    @vite('resources/js/app.js')
+<body class="
+    bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-50 via-orange-100 to-orange-200
+    px-4 md:px-0
+    text-gray-700
+    subpixel-antialiased
+    ">
+    <div class="flex flex-col h-full justify-between">
+        <x-header />
+        <main>
+            {{ $slot }}
+        </main>
+        <x-footer />
+        @vite('resources/js/app.js')
+    </div>
 </body>
 
 </html>
