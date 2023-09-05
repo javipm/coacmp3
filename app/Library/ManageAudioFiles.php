@@ -18,7 +18,7 @@ class ManageAudioFiles
         return $files;
     }
 
-    public static function getInfoFromFiles(array $files): array|bool
+    public static function getInfoFromFiles(array $files, string $path): array|bool
     {
         $actings = [];
         $errors = [];
@@ -27,6 +27,7 @@ class ManageAudioFiles
         foreach ($files as $file) {
             if (pathinfo($file, PATHINFO_EXTENSION) === 'mp3') {
                 $filename = pathinfo($file, PATHINFO_FILENAME);
+                $file_original_date = filemtime($path.'/'.$file);
 
                 $modality = '';
                 $group = '';
@@ -73,7 +74,8 @@ class ManageAudioFiles
                     'group' => $group,
                     'phase' => $phase,
                     'filename' => $file,
-                    'year' => env('APP_AUDIO_YEAR', ''),
+                    'filename_date' => date('Y-m-d H:i:s', $file_original_date),
+                    'year' => date('Y', $file_original_date),
                 ];
             }
         }

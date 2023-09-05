@@ -9,7 +9,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class GroupActing extends Model
 {
-    use HasFactory, Sluggable, HasSEO;
+    use HasFactory, HasSEO, Sluggable;
 
     protected $table = 'groups_actings';
 
@@ -17,6 +17,8 @@ class GroupActing extends Model
         'phase',
         'filename',
         'group_id',
+        'created_at',
+        'updated_at',
     ];
 
     public const PHASES = [

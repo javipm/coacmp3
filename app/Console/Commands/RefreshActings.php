@@ -33,7 +33,7 @@ class RefreshActings extends Command
         $errors = [];
 
         if ($files) {
-            $audioFilesInfo = ManageAudioFiles::getInfoFromFiles($files);
+            $audioFilesInfo = ManageAudioFiles::getInfoFromFiles($files, $path);
             if ($audioFilesInfo) {
                 $actingsFiles = $audioFilesInfo['actings'];
                 $errorsFiles = $audioFilesInfo['errors'];

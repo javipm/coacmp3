@@ -73,6 +73,8 @@ class ManageActings
             $groupActing->phase = $acting['phase'];
             $groupActing->filename = $acting['filename'];
             $groupActing->group_id = $group->id;
+            $groupActing->created_at = $acting['filename_date'];
+            $groupActing->updated_at = $acting['filename_date'];
             $groupActing->save();
 
             $actingsProcessed[] = $acting['filename'];
