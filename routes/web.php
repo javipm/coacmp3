@@ -13,6 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
+
+Route::get(
+    '/comparsas',
+    [App\Http\Controllers\ModalityController::class, 'comparsas']
+)->name('modality-comparsas');
+
+Route::get(
+    '/chirigotas',
+    [App\Http\Controllers\ModalityController::class, 'chirigotas']
+)->name('modality-chirigotas');
+
+Route::get(
+    '/coros',
+    [App\Http\Controllers\ModalityController::class, 'coros']
+)->name('modality-coros');
+
+Route::get(
+    '/cuartetos',
+    [App\Http\Controllers\ModalityController::class, 'cuartetos']
+)->name('modality-cuartetos');

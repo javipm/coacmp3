@@ -43,14 +43,14 @@ class LastActingsTable extends DataTableComponent
         $this->setTdAttributes(function (Column $column) {
             return [
                 'default' => false,
-                'class' => 'border-b border-slate-100 p-2 pl-4 sm:pl-6 text-slate-500 text-xs md:text-sm',
+                'class' => 'border-b border-slate-100 p-2 pl-2 sm:pl-6 text-slate-500 text-xs md:text-sm',
             ];
         });
 
         $this->setThAttributes(function (Column $column) {
             return [
                 'default' => false,
-                'class' => 'px-4 sm:px-6 py-3 text-left text-xs font-medium whitespace-nowrap text-white uppercase tracking-wider',
+                'class' => 'pl-2 sm:pl-6 py-3 text-left text-xs font-medium whitespace-nowrap text-white uppercase tracking-wider',
             ];
         });
 

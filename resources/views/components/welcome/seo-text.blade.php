@@ -1,4 +1,4 @@
-<section class="container pt-20 mx-auto text-xs text-gray-600 leading-7">
+<section class="container mt-28 mx-auto text-xs text-gray-600 leading-7">
     <p>Sumérgete en la energía contagiosa y la creatividad desbordante del Carnaval de Cádiz con nuestra exclusiva
         colección de audios en formato MP3. En nuestra plataforma, capturamos la esencia única de cada día del
         Concurso Oficial de Agrupaciones Carnavalescas (COAC), desde las desternillantes chirigotas hasta las
