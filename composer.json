@@ -19,7 +19,7 @@
         "livewire/livewire": "^3.0",
         "ralphjsmit/laravel-filament-seo": "^1.2",
         "ralphjsmit/laravel-seo": "^1.4",
-        "rappasoft/laravel-livewire-tables": "dev-v3-master",
+        "rappasoft/laravel-livewire-tables": "dev-v3-develop",
         "symfony/browser-kit": "^6.3",
         "symfony/http-client": "^6.3"
     },

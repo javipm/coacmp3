@@ -11,9 +11,9 @@
                 class="text-orange-700" rel="nofollow" href="https://www.youtube.com/channel/UCpOz3CN6mDlxkE7-m5AS1aQ"
                 target="_blank">@ONDACADIZCARNAVAL</a>, mil gracias a ellos.</p>
     </div>
-    <div class="">
-        <img id="imagen-falla" class="mx-auto" src="assets/falla.png" alt="Teatro Falla de Cádiz" />
-    </div>
+    <img x-data @click="window.launchConfetti()" id="imagen-falla" class="mx-auto cursor-pointer" src="assets/falla.png"
+        alt="Teatro Falla de Cádiz" />
+
 </section>
 
 <x-welcome.scroll-icon />

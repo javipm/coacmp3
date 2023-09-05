@@ -1,38 +1,8 @@
 import "./bootstrap";
-import confetti from "canvas-confetti";
+import launchConfetti from "./confetti";
 
-/** HOME CONFETTI */
-var canvas = document.getElementById("confetti");
-
-if (canvas !== null) {
-    canvas.confetti =
-        canvas.confetti || confetti.create(canvas, { resize: true });
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
-            let imagePosition = document
-                .querySelector("#imagen-falla")
-                .getBoundingClientRect();
-
-            let positionX =
-                imagePosition.left / window.innerWidth +
-                imagePosition.width / window.innerWidth / 2;
-            let positionY = imagePosition.top / window.innerHeight + 0.05;
-
-            canvas.confetti({
-                particleCount: 100,
-                spread: 100,
-                startVelocity: 30,
-                origin: {
-                    x: positionX,
-                    y: positionY,
-                },
-            });
-        },
-        false
-    );
-}
+window.launchConfetti = launchConfetti;
+document.addEventListener("DOMContentLoaded", launchConfetti, false);
 
 /** HOME HIDE SCROLL ICON */
 let scrollPos = 0;
@@ -52,4 +22,4 @@ function checkPosition() {
     scrollPos = windowY;
 }
 
-window.addEventListener("scroll", checkPosition);
+if (nav !== null) window.addEventListener("scroll", checkPosition);

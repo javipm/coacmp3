@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "264bb3998c3f250329409336d8b5a55a",
+    "content-hash": "8aeb48e30a8aa59cabef5320f61d31ac",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5199,16 +5199,16 @@
         },
         {
             "name": "rappasoft/laravel-livewire-tables",
-            "version": "dev-v3-master",
+            "version": "dev-v3-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rappasoft/laravel-livewire-tables.git",
-                "reference": "425051140b0dd711363116409821d7afba31a6ed"
+                "reference": "74b547c0f3be3c0aaa4f53c1013b26d693800c88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rappasoft/laravel-livewire-tables/zipball/425051140b0dd711363116409821d7afba31a6ed",
-                "reference": "425051140b0dd711363116409821d7afba31a6ed",
+                "url": "https://api.github.com/repos/rappasoft/laravel-livewire-tables/zipball/74b547c0f3be3c0aaa4f53c1013b26d693800c88",
+                "reference": "74b547c0f3be3c0aaa4f53c1013b26d693800c88",
                 "shasum": ""
             },
             "require": {
@@ -5261,7 +5261,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rappasoft/laravel-livewire-tables/issues",
-                "source": "https://github.com/rappasoft/laravel-livewire-tables/tree/v3-master"
+                "source": "https://github.com/rappasoft/laravel-livewire-tables/tree/v3-develop"
             },
             "funding": [
                 {
@@ -5269,7 +5269,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-09-01T04:22:40+00:00"
+            "time": "2023-09-04T17:27:52+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
