@@ -28,7 +28,7 @@ class LastActingsTable extends DataTableComponent
         //Style
         $this->setTableWrapperAttributes([
             'default' => false,
-            'class' => 'shadow-lg shadow-orange-200 border-b border-orange-200 overflow-y-scroll sm:overflow-hidden',
+            'class' => 'shadow-lg shadow-orange-200 border-b border-orange-200 overflow-y-scroll sm:overflow-hidden rounded',
         ]);
 
         $this->setTableAttributes([
@@ -80,9 +80,11 @@ class LastActingsTable extends DataTableComponent
             Column::make('Añadido', 'updated_at')
                 ->format(fn ($value) => date('d-m-Y', strtotime($value)))
                 ->sortable(),
-            LinkColumn::make('')
-                ->title(fn ($row) => "<i class='bx bx-play-circle text-orange-600 text-lg hover:text-orange-800 hover:transition' ></i>")
-                ->location(fn ($row) => '#'),
+            Column::make('Filename')
+                ->format(
+                    fn ($value, $row, Column $column) => "<i class='bx bx-play-circle text-orange-600 text-lg hover:text-orange-800 hover:transition cursor-pointer' ></i>"
+                )
+                ->html(),
         ];
     }
 

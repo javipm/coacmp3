@@ -75,6 +75,9 @@ class GroupsResource extends Resource
                         ->maxLength(255)
                         ->hiddenOn('create')
                         ->columnStart(1),
+                    Forms\Components\Toggle::make('is_featured')
+                        ->label('Destacado')
+                        ->inline(false),
                     Forms\Components\RichEditor::make('description')->label('Descripción')->columnSpan('full'),
                 ]),
                 Forms\Components\Section::make('SEO')->schema([
@@ -88,6 +91,7 @@ class GroupsResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\IconColumn::make('is_completed')->label('Relleno')->boolean(),
+                Tables\Columns\ToggleColumn::make('is_featured')->label('Destacado'),
                 Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable(),
                 Tables\Columns\TextColumn::make('year')->label('Año'),
                 Tables\Columns\TextColumn::make('modality.name')->label('Modalidad'),
