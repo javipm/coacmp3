@@ -1,5 +1,4 @@
-<section
-    class="container relative snap-center mx-auto grid md:grid-cols-3 auto-rows-fr items-center h-[calc(100vh-68px)]">
+<section class="container relative mx-auto grid md:grid-cols-3 auto-rows-fr items-center h-[calc(100vh-68px)]">
     <div class="text-center mr-auto place-self-center md:text-left md:col-span-2">
         <h1 class="text-6xl text-gray-700 uppercase font-title font-extrabold">Carnaval de Cádiz <span
                 class="text-orange-600 font-light">audios</span>

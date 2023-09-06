@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 
 <body class="
@@ -13,13 +14,14 @@
     text-gray-700
     subpixel-antialiased
     ">
-    <div class="flex flex-col h-full justify-between">
+    <div class="flex flex-col min-h-screen h-full justify-between">
         <x-header />
         <main>
             {{ $slot }}
         </main>
         <x-footer />
     </div>
+    @livewireScripts
     @vite('resources/js/app.js')
 </body>
 

@@ -1,7 +1,9 @@
 import "./bootstrap";
 import launchConfetti from "./confetti";
+import player from "./player";
 
 window.launchConfetti = launchConfetti;
+window.player = player;
 document.addEventListener("DOMContentLoaded", launchConfetti, false);
 
 /** HOME HIDE SCROLL ICON */

@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class GroupActing extends Model
 {
-    use HasFactory, HasSEO, Sluggable;
+    use HasFactory, HasSEO, Sluggable, SluggableScopeHelpers;
 
     protected $table = 'groups_actings';
 
@@ -20,6 +21,8 @@ class GroupActing extends Model
         'created_at',
         'updated_at',
     ];
+
+    protected $appends = ['url'];
 
     public const PHASES = [
         'Preliminares' => 'Preliminares',
@@ -41,5 +44,10 @@ class GroupActing extends Model
     public function group(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Group::class, 'id', 'group_id');
+    }
+
+    public function getUrlAttribute(): string
+    {
+        return env('APP_URL').'/files/'.$this->group->year.'/'.$this->filename;
     }
 }

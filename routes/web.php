@@ -34,3 +34,13 @@ Route::get(
     '/cuartetos',
     [App\Http\Controllers\ModalityController::class, 'cuartetos']
 )->name('modality-cuartetos');
+
+Route::get(
+    '/{group}/{phase}',
+    [App\Http\Controllers\GroupActingController::class, 'view']
+)->name('group-acting');
+
+Route::get(
+    '/{group}',
+    [App\Http\Controllers\GroupActingController::class, 'view']
+)->name('group');

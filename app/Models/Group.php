@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Group extends Model
 {
-    use HasFactory, Sluggable, HasSEO;
+    use HasFactory, HasSEO, Sluggable, SluggableScopeHelpers;
 
     public $fillable = [
         'name',

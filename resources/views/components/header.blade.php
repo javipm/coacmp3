@@ -1,7 +1,7 @@
 <header class="relative container mx-auto flex items-center justify-between py-5 z-10">
     <div class="flex flex-grow basis-0 ">
         <a class="text-xl text-orange-700 font-bold uppercase tracking-wide font-title flex items-center justify-center"
-            href="./">
+            href="/">
             <i class='bx bx-party bx-tada mr-2 text-3xl'></i>
             COAC Audios
         </a>

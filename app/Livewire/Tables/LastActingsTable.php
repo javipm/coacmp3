@@ -4,6 +4,7 @@ namespace App\Livewire\Tables;
 
 use App\Models\GroupActing;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
@@ -21,7 +22,7 @@ class LastActingsTable extends DataTableComponent
         $this->setSearchDisabled();
         $this->setPerPageAccepted([16]);
         $this->setPerPage(16);
-        $this->setPaginationVisibilityStatus(false);
+        // $this->setPaginationVisibilityStatus(false);
 
         $this->setDefaultSort('updated_at', 'desc');
 
@@ -72,17 +73,23 @@ class LastActingsTable extends DataTableComponent
                     return [
                         'class' => 'text-orange-600 hover:text-orange-800 hover:transition',
                     ];
-                })
-                ->sortable()
-                ->searchable(),
-            Column::make('Fase', 'phase')
-                ->sortable(),
+                }),
+            Column::make('Fase', 'phase'),
             Column::make('Añadido', 'updated_at')
                 ->format(fn ($value) => date('d-m-Y', strtotime($value)))
                 ->sortable(),
-            Column::make('Filename')
+            Column::make('', 'filename')
                 ->format(
-                    fn ($value, $row, Column $column) => "<i class='bx bx-play-circle text-orange-600 text-lg hover:text-orange-800 hover:transition cursor-pointer' ></i>"
+                    function ($value, $row, Column $column) {
+                        $url = route('group-acting', ['group' => $row->group->slug, 'phase' => strtolower($row->phase)]);
+                        $alt = Str::replace("'", '', $row->group->name.' - '.$row->phase);
+
+                        return "
+                            <a title='{$alt}' href='{$url}' class='text-orange-600 text-lg hover:text-orange-800 hover:transition cursor-pointer'>
+                                <i class='bx bx-play-circle ' ></i>
+                            </a>
+                        ";
+                    }
                 )
                 ->html(),
         ];
