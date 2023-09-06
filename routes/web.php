@@ -13,34 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('home');
 
 Route::get(
-    '/comparsas',
-    [App\Http\Controllers\ModalityController::class, 'comparsas']
-)->name('modality-comparsas');
+    '/{modality}',
+    [App\Http\Controllers\ModalityController::class, 'list']
+)->name('modality');
 
 Route::get(
-    '/chirigotas',
-    [App\Http\Controllers\ModalityController::class, 'chirigotas']
-)->name('modality-chirigotas');
-
-Route::get(
-    '/coros',
-    [App\Http\Controllers\ModalityController::class, 'coros']
-)->name('modality-coros');
-
-Route::get(
-    '/cuartetos',
-    [App\Http\Controllers\ModalityController::class, 'cuartetos']
-)->name('modality-cuartetos');
-
-Route::get(
-    '/{group}/{phase}',
-    [App\Http\Controllers\GroupActingController::class, 'view']
-)->name('group-acting');
-
-Route::get(
-    '/{group}',
+    '/{year}/{modality}/{group}',
     [App\Http\Controllers\GroupActingController::class, 'view']
 )->name('group');
+
+Route::get(
+    '/{year}/{modality}/{group}/{phase}',
+    [App\Http\Controllers\GroupActingController::class, 'view']
+)->name('group-acting');

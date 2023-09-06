@@ -68,7 +68,7 @@ class LastActingsTable extends DataTableComponent
         return [
             LinkColumn::make('Grupo')
                 ->title(fn ($row) => $row->group->name)
-                ->location(fn ($row) => '#')
+                ->location(fn ($row) => route('group', ['year' => $row->group->year, 'group' => $row->group->slug]))
                 ->attributes(function ($row) {
                     return [
                         'class' => 'text-orange-600 hover:text-orange-800 hover:transition',
@@ -81,7 +81,7 @@ class LastActingsTable extends DataTableComponent
             Column::make('', 'filename')
                 ->format(
                     function ($value, $row, Column $column) {
-                        $url = route('group-acting', ['group' => $row->group->slug, 'phase' => strtolower($row->phase)]);
+                        $url = route('group-acting', ['year' => $row->group->year, 'group' => $row->group->slug, 'phase' => strtolower($row->phase)]);
                         $alt = Str::replace("'", '', $row->group->name.' - '.$row->phase);
 
                         return "

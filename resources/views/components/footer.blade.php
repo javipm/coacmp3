@@ -1,4 +1,4 @@
-<footer class="relative container mx-auto flex items-center justify-between py-5 z-10 mt-16">
+<footer class="relative container mx-auto flex items-center justify-between py-5 z-10">
     <div class="flex flex-grow basis-0 ">
         <span class="font-light text-xs text-gray-900 tracking-wide flex">{{ date('Y') }} - Desarrollado
             por</span>

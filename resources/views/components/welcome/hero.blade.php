@@ -4,7 +4,8 @@
                 class="text-orange-600 font-light">audios</span>
         </h1>
 
-        <p class="mt-8 text-md font-light">Desde aquí podrás descargar las actuaciones de las agrupaciones del COAC
+        <p class="mt-8 text-md font-light">Desde aquí podrás descargar las actuaciones de las agrupaciones del COAC {{
+            date('Y') }}
             en
             formato MP3. <br /> Todos los audios son extraidos cada madrugada de los vídeos que sube <a
                 class="text-orange-700" rel="nofollow" href="https://www.youtube.com/channel/UCpOz3CN6mDlxkE7-m5AS1aQ"

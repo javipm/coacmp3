@@ -7,9 +7,9 @@ use App\Models\Modality;
 
 class ModalityController extends Controller
 {
-    public function comparsas()
+    public function list($modality = '')
     {
-        $modality_id = Modality::where('slug', 'comparsas')->first()->id;
+        $modality_id = Modality::where('slug', $modality)->first()->id;
         $groups = Group::where('modality_id', $modality_id)->get();
 
         return view('modality.comparsas');

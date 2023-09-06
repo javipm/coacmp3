@@ -1,4 +1,4 @@
-<div x-data='{ play: false }' x-init="player()" class=" bg-white shadow-lg overflow-hidden">
+<div x-data='{ play: false }' x-init="player()" class=" bg-white overflow-hidden">
     <div class="bg-gray-50 flex flex-col items-center justify-center">
         <div class="relative w-full flex flex-col shadow-player-light bg-player-light-background ">
             <div id="audio-player-loader" role="status"
@@ -18,8 +18,8 @@
             <div id="audio-player" class="opacity-0 transition-opacity duration-500">
                 <div class="px-10 pt-5 pb-4 flex items-center z-50">
                     <div class="flex flex-col">
-                        <h2 data-amplitude-song-info="name" class="text-xl  leading-7 text-slate-900 ">{{
-                            $actingSelected->phase }} - {{ $actingSelected->created_at->format('d/m/Y') }}</h2>
+                        <p data-amplitude-song-info="name" class="text-xl  leading-7 text-slate-900 ">{{
+                            $actingSelected->phase }} - {{ $actingSelected->created_at->format('d/m/Y') }}</p>
                         <span data-amplitude-song-info="artist" class="text-xs  leading-6 text-gray-500">{{
                             $actingSelected->group->name }}</span>
                     </div>
@@ -40,7 +40,7 @@
                         <i class=' bx bx-skip-previous text-5xl m-0 text-gray-400'></i>
                     </div>
                     <div ' x-on:click="play = !play"
-                    class="cursor-pointer amplitude-play-pause w-20 h-20 rounded-full bg-white border border-play-pause-light-border shadow-xl flex items-center justify-center text-center ">
+                    class="cursor-pointer amplitude-play-pause w-20 h-20 rounded-full bg-white border border-play-pause-light-border shadow-xl flex items-center justify-center text-center transition duration-500">
                     <i class=' bx bx-play text-5xl pl-2 m-0 text-orange-600' x-show="!play"></i>
                         <i class='bx bx-pause text-5xl text-orange-600' x-show="play"></i>
                     </div>
@@ -59,17 +59,17 @@
         <li class="flex items-center space-x-3 hover:bg-gray-100" data-artist="{{ $acting->group->name }}"
             data-title="{{ $acting->phase }} - {{ $acting->created_at->format('d/m/Y') }}"
             data-url="{{ $acting->url }}">
-            <div class="p-3 flex-1 text-xs">
+            <div class="px-4 py-2 flex-1 text-xs">
                 <span>{{ $acting->phase }}</span>
                 <br />
                 <span class="text-xs text-gray-400">{{ $acting->created_at->format('d/m/Y') }}</span>
             </div>
             <button data-amplitude-song-index="{{ $loop->index }}" x-on:click="play = true"
-                class="amplitude-play-pause p-3 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
+                class="amplitude-play-pause px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
                 <i class='bx bx-play-circle text-xl'></i>
             </button>
             <a target="_blank" href="{{ $acting->url }}"
-                class="p-3 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
+                class="px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
                 <i class='bx bx-download text-xl'></i>
             </a>
         </li>
