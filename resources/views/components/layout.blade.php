@@ -14,12 +14,12 @@
     text-gray-700
     subpixel-antialiased
     ">
-    <div class="flex flex-col min-h-screen h-full justify-between">
-        <x-header />
-        <main>
+    <div class="flex flex-col min-h-screen h-full">
+        <x-layout.header />
+        <main class="flex-grow ">
             {{ $slot }}
         </main>
-        <x-footer />
+        <x-layout.footer />
     </div>
     @livewireScripts
     @vite('resources/js/app.js')

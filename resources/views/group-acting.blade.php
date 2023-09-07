@@ -1,5 +1,5 @@
 <x-layout>
-    <section>
+    <section class="mt-2 mb-2">
         {{ Breadcrumbs::render('group', $group) }}
     </section>
     <section class="container w-full mx-auto h-full items-center">
