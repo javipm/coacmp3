@@ -1,6 +1,6 @@
 <header class="relative container mx-auto flex items-center justify-between py-5 z-10">
     <div class="flex flex-grow basis-0 ">
-        <a class="text-xl text-orange-700 font-bold uppercase tracking-wide font-title flex items-center justify-center"
+        <a class="text-xl text-orange-700 font-bold uppercase tracking-wide font-title flex items-center justify-center transition hover:scale-110 hover:text-orange-900"
             href="/">
             <i class='bx bx-party bx-tada mr-2 text-3xl'></i>
             COAC Audios
@@ -9,9 +9,10 @@
 
     <nav class="hidden lg:block sm:hidden">
         <ul class="flex text-md mr-8
-        [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-orange-600  [&>li>a]:inline-block [&>li>a]:pl-8
+        [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-orange-700  [&>li>a]:inline-block [&>li>a]:pl-8
         [&>li>a]:font-title
-        [&>li>a:hover]:transition [&>li>a:hover]:text-orange-800">
+        [&>li>a:hover]:transition [&>li>a:hover]:text-orange-900
+        [&>li>a:hover]:scale-110">
             <li><a href="#">Últimos audios</a></li>
             <li><a href="#">Comparsas</a></li>
             <li><a href="#">Chirigotas</a></li>
@@ -23,7 +24,7 @@
     </nav>
 
     <div class="flex basis-0 justify-end">
-        <span class="h-6 w-6 text-orange-600 cursor-pointer">
+        <span class="h-6 w-6 text-orange-700 cursor-pointer transition hover:scale-125 hover:text-orange-900">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
