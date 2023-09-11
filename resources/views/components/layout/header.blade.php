@@ -23,7 +23,8 @@
     </nav>
 
     <div class="flex basis-0 justify-end">
-        <span class="h-6 w-6 text-orange-700 cursor-pointer transition hover:scale-125 hover:text-orange-900">
+        <span x-on:click="isSearchModalOpen = true"
+            class="h-6 w-6 text-orange-700 cursor-pointer transition hover:scale-125 hover:text-orange-900">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

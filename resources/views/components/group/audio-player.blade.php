@@ -41,9 +41,9 @@
                     <div class="cursor-pointer amplitude-prev">
                         <i class=' bx bx-skip-previous text-5xl m-0 text-gray-400'></i>
                     </div>
-                    <div ' x-on:click="play = !play"
-                    class="cursor-pointer amplitude-play-pause w-20 h-20 rounded-full bg-white border border-play-pause-light-border shadow-xl flex items-center justify-center text-center transition duration-500">
-                    <i class=' bx bx-play text-5xl pl-2 m-0 text-orange-600' x-show="!play"></i>
+                    <div x-on:click="play = !play"
+                        class="cursor-pointer amplitude-play-pause w-20 h-20 rounded-full bg-white border border-play-pause-light-border shadow-xl flex items-center justify-center text-center transition duration-500">
+                        <i class=' bx bx-play text-5xl pl-2 m-0 text-orange-600' x-show="!play"></i>
                         <i class='bx bx-pause text-5xl text-orange-600' x-show="play"></i>
                     </div>
                     <div class="cursor-pointer amplitude-next text-right">
