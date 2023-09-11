@@ -22,7 +22,7 @@ class LastActingsTable extends DataTableComponent
         $this->setSearchDisabled();
         $this->setPerPageAccepted([16]);
         $this->setPerPage(16);
-        // $this->setPaginationVisibilityStatus(false);
+        $this->setPaginationVisibilityStatus(false);
 
         $this->setDefaultSort('updated_at', 'desc');
 
@@ -68,7 +68,7 @@ class LastActingsTable extends DataTableComponent
         return [
             LinkColumn::make('Grupo')
                 ->title(fn ($row) => $row->group->name)
-                ->location(fn ($row) => route('group', ['year' => $row->group->year, 'modality' => $row->group->modality->slug, 'group' => $row->group->slug]))
+                ->location(fn ($row) => route('group-acting', ['year' => $row->group->year, 'modality' => $row->group->modality->slug, 'group' => $row->group->slug, 'phase' => strtolower($row->phase)]))
                 ->attributes(function ($row) {
                     return [
                         'class' => 'text-orange-600 hover:text-orange-800 hover:transition',

@@ -7,6 +7,7 @@ use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class GroupActing extends Model
 {
@@ -48,6 +49,7 @@ class GroupActing extends Model
 
     public function getUrlAttribute(): string
     {
-        return env('APP_URL').'/files/'.$this->group->year.'/'.$this->filename;
+        return env('APP_URL').'/storage/audios/'.$this->group->year.'/'.$this->filename;
     }
+
 }

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :seoModel="$SEOData">
     <section class="mt-2 mb-2">
         {{ Breadcrumbs::render('group', $group) }}
     </section>

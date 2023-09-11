@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'view'])->name('home');
 
 Route::get(
     '/{modality}',
-    [App\Http\Controllers\ModalityController::class, 'list']
+    [App\Http\Controllers\ModalityController::class, 'view']
 )->name('modality');
 
 Route::get(

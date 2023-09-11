@@ -23,8 +23,9 @@ class RedirectOldActingsUrls
                 $file = base64_decode($file);
                 if (preg_match("#\.(mp3)$# i", $file)) {
                     $acting = GroupActing::where('filename', $file)->first();
+
                     if ($acting) {
-                        return redirect()->route('group-acting', ['modality' => $acting->modality->slug, 'year' => $acting->year, 'group' => $acting->group->slug, 'phase' => $acting->phase]);
+                        return redirect()->route('group-acting', ['modality' => $acting->group->modality->slug, 'year' => $acting->group->year, 'group' => $acting->group->slug, 'phase' => strtolower($acting->phase)]);
                     }
                 }
             }

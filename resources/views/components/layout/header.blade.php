@@ -13,12 +13,11 @@
         [&>li>a]:font-title
         [&>li>a:hover]:transition [&>li>a:hover]:text-orange-900
         [&>li>a:hover]:scale-110">
-            <li><a href="#">Últimos audios</a></li>
-            <li><a href="#">Comparsas</a></li>
-            <li><a href="#">Chirigotas</a></li>
-            <li><a href="#">Coros</a></li>
-            <li><a href="#">Cuartetos</a></li>
-            <li><a href="#">Autores</a></li>
+            <li><a href="/#last-actings">Últimos audios</a></li>
+            <li><a href="{{ route('modality', 'comparsas') }}">Comparsas</a></li>
+            <li><a href="{{ route('modality', 'chirigotas') }}">Chirigotas</a></li>
+            <li><a href="{{ route('modality', 'coros') }}">Coros</a></li>
+            <li><a href="{{ route('modality', 'cuartetos') }}">Cuartetos</a></li>
             <li><a class="px-0" href="#">Ediciones</a></li>
         </ul>
     </nav>

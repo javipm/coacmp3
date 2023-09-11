@@ -10,41 +10,41 @@
     </div>
 
     @if ($group->director)
-    <div class="px-4 py-3 border-b text-xs text-gray-700">
-        <span class="grid grid-cols-2 items-center h-full">
+    <div class="@if (isset($outside)) lg:h-20 @endif px-4 py-3 border-b text-xs text-gray-700">
+        <span class="grid grid-cols-3 items-center h-full">
             <div>
                 <i class="bx bxs-user text-gray-900 mr-2"></i> <span class="font-bold mr-1">Director
                 </span>
-            </div>
-            <div>{{$group->director}}</div>
+            </div class="col-span-2">
+            <span>{{$group->director}}</span>
         </span>
         @endif
     </div>
 
     @if ($group->authorsLyrics)
-    <div class="px-4 py-3 border-b text-xs text-gray-700">
-        <span class="grid grid-cols-2 items-center h-full">
+    <div class="@if (isset($outside)) lg:h-20 @endif px-4 py-3 border-b text-xs text-gray-700">
+        <span class="grid grid-cols-3 items-center h-full">
             <div>
                 <i class="bx bxs-pencil text-gray-900 mr-2"></i> <span class="font-bold mr-1">Letra
                 </span>
             </div>
-            <div>
+            <span class="col-span-2">
                 {{$group->authorsLyrics->pluck('name')->join(', ', ' y ') }}
-            </div>
+            </span>
         </span>
     </div>
     @endif
 
     @if ($group->authorsMusic)
-    <div class="px-4 py-3 border-b text-xs text-gray-700">
-        <span class="grid grid-cols-2 items-center h-full">
+    <div class="@if (isset($outside)) lg:h-20 @endif px-4 py-3 border-b text-xs text-gray-700">
+        <span class="grid grid-cols-3 items-center h-full">
             <div>
                 <i class="bx bxs-music text-gray-900 mr-2"></i> <span class="font-bold mr-1">Música
                 </span>
             </div>
-            <div>
+            <span class="col-span-2">
                 {{$group->authorsMusic->pluck('name')->join(', ', ' y ') }}
-            </div>
+            </span>
         </span>
     </div>
     @endif

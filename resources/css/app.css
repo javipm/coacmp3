@@ -9,3 +9,16 @@
 [x-cloak] {
     display: none !important;
 }
+
+/** Smooth scroll offset anchor **/
+
+html {
+    scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 50px;
+    margin: -50px 0 0;
+}
