@@ -12,7 +12,7 @@ class SearchComponent extends Component
 
     public function mount()
     {
-        $this->groups = \App\Models\Group::search($this->query)->take(12)->orderBy('created_at', 'desc')->get();
+        $this->groups = \App\Models\Group::search($this->query)->take(12)->orderBy('pageviews', 'desc')->get();
     }
 
     public function updatedQuery()
@@ -20,7 +20,7 @@ class SearchComponent extends Component
         if (! $this->query) {
             return $this->mount();
         }
-        $this->groups = \App\Models\Group::search($this->query)->get();
+        $this->groups = \App\Models\Group::search($this->query)->orderBy('pageviews', 'desc')->get();
     }
 
     public function render()

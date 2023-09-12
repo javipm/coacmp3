@@ -16,15 +16,10 @@
             </article>
 
             <aside class="">
-                RELATED INFO
-                TODO
+                <livewire:aside-related-component />
             </aside>
         </div>
 
-        {{-- @if($group->description)
-        <article class="col-span-2 mt-10 mb-10 md:mb-0 [&>p]:text-sm [&>p]:pb-4 [&>p]:text-gray-600">
-            {!! $group->description !!}
-        </article>
-        @endif --}}
+
     </section>
 </x-layout>
