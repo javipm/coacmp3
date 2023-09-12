@@ -22,3 +22,17 @@ html {
     height: 50px;
     margin: -50px 0 0;
 }
+
+/** Livewire navigation **/
+#nprogress .peg {
+    box-shadow: 0 0 10px #ea580c, 0 0 5px #ea580c !important;
+}
+
+#nprogress .bar {
+    background: #ea580c !important;
+}
+
+#nprogress .spinner-icon {
+    border-top-color: #ea580c !important;
+    border-left-color: #ea580c !important;
+}

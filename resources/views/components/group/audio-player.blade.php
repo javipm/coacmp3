@@ -1,4 +1,4 @@
-<div x-data='{ play: false }' x-init="player()" class=" bg-white">
+<div x-data='{ play: false, track: {{ $initialSong }} }' x-init="player()" class=" bg-white">
     <div class="bg-gray-50 flex flex-col items-center justify-center border-t-2 border-b-2 border-orange-600">
         <div class="relative w-full flex flex-col ">
             <x-layout.loader />
@@ -48,32 +48,23 @@
             Audios disponibles</span>
     </div>
 
-    <ul id="song-list" class="text-xs sm:text-base divide-y" data-start={{ $initialSong }}>
+    <ul id="song-list" class="text-xs sm:text-base divide-y" data-start={{$initialSong }}>
         @foreach ($actings as $acting)
-        <li class="flex items-center space-x-3 hover:bg-gray-100
-        @if ($initialSong == $loop->index) bg-gray-50 font-bold @endif
-        " data-artist="{{ $acting->group->name }}"
-            data-title="{{ $acting->phase }} - {{ $acting->created_at->format('d/m/Y') }}"
+        <li class="flex items-center space-x-3 hover:bg-gray-100"
+            :class="track == {{ $loop->index }} ? 'bg-gray-50 font-bold' : ''" data-artist=" {{ $acting->group->name
+            }}" data-title="{{ $acting->phase }} - {{ $acting->created_at->format('d/m/Y') }}"
             data-url="{{ $acting->url }}">
             <div class="px-4 py-2 flex-1 text-xs">
                 <span>{{ $acting->phase }}</span>
                 <br />
                 <span class="text-xs text-gray-400">{{ $acting->created_at->format('d/m/Y') }}</span>
             </div>
-            <a href="{{  route('group-acting', [
-                'modality' => $acting->group->modality->slug,
-                'year' => $acting->group->year,
-                'group' => $acting->group->slug,
-                'phase' => $acting->slug
-                ]) }}" data-amplitude-song-index="{{ $loop->index }}"
-                class="px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
-                @if ($initialSong !== $loop->index)
-                <i class='bx bx-play-circle text-xl'></i>
-                @else
-                <i class='bx bxl-deezer bx-flashing'></i>
-                @endif
-            </a>
-            <a target="_blank" href="{{ $acting->url }}"
+            <button data-amplitude-song-index="{{ $loop->index }}" x-on:click="play = true; track={{ $loop->index }}"
+                class="amplitude-play-pause px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
+                <i x-transition x-cloak class='bx text-xl'
+                    :class="track != {{ $loop->index }} ? 'bx-play-circle' : 'bxl-deezer bx-flashing'"></i>
+            </button>
+            <a download href="{{ $acting->url }}"
                 class="px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
                 <i class='bx bx-download text-xl'></i>
             </a>

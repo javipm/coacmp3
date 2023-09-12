@@ -71,6 +71,7 @@ class LastActingsTable extends DataTableComponent
                 ->location(fn ($row) => route('group-acting', ['year' => $row->group->year, 'modality' => $row->group->modality->slug, 'group' => $row->group->slug, 'phase' => strtolower($row->phase)]))
                 ->attributes(function ($row) {
                     return [
+                        'wire:navigate' => true,
                         'class' => 'text-orange-600 hover:text-orange-800 hover:transition',
                     ];
                 }),
@@ -85,7 +86,7 @@ class LastActingsTable extends DataTableComponent
                         $alt = Str::replace("'", '', $row->group->name.' - '.$row->phase);
 
                         return "
-                            <a title='{$alt}' href='{$url}' class='text-orange-600 text-lg hover:text-orange-800 hover:transition cursor-pointer'>
+                            <a wire:navigate title='{$alt}' href='{$url}' class='text-orange-600 text-lg hover:text-orange-800 hover:transition cursor-pointer'>
                                 <i class='bx bx-play-circle ' ></i>
                             </a>
                         ";

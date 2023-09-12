@@ -4,12 +4,15 @@
                 class="text-orange-600 font-light">audios</span>
         </h1>
 
-        <p class="mt-8 text-md font-light">Desde aquí podrás descargar las actuaciones de las agrupaciones del COAC {{
-            date('Y') }}
-            en
-            formato MP3. <br /> Todos los audios son extraidos cada madrugada de los vídeos que sube <a
-                class="text-orange-700" rel="nofollow" href="https://www.youtube.com/channel/UCpOz3CN6mDlxkE7-m5AS1aQ"
-                target="_blank">@ONDACADIZCARNAVAL</a>, mil gracias a ellos.</p>
+        <div class="mt-8 text-md font-light">
+            Desde aquí podrás descargar las actuaciones de las agrupaciones del Concurso Oficial de Agrupaciones del
+            Carnaval de Cádiz en formato MP3. Podrás encontrar las <h2 class="inline">actuaciones del COAC del año 2022
+                y 2023.</h2>
+            <br /><br />
+            Todos los audios son extraidos cada madrugada de los vídeos que sube <a class="text-orange-700"
+                rel="nofollow" href="https://www.youtube.com/channel/UCpOz3CN6mDlxkE7-m5AS1aQ"
+                target="_blank">@ONDACADIZCARNAVAL</a>, mil gracias a ellos.
+        </div>
     </div>
     <img x-data @click="window.launchConfetti()" id="imagen-falla" class="mx-auto cursor-pointer" src="assets/falla.png"
         alt="Teatro Falla de Cádiz" />

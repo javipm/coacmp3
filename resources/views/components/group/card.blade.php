@@ -15,8 +15,8 @@
             <div>
                 <i class="bx bxs-user text-gray-900 mr-2"></i> <span class="font-bold mr-1">Director
                 </span>
-            </div class="col-span-2">
-            <span>{{$group->director}}</span>
+            </div>
+            <span class="col-span-2">{{$group->director}}</span>
         </span>
         @endif
     </div>

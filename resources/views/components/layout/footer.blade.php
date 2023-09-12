@@ -12,8 +12,8 @@
         [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-orange-600  [&>li>a]:inline-block [&>li>a]:px-2
         [&>li>a]:font-light
         [&>li>a:hover]:transition [&>li>a:hover]:text-orange-800">
-            <li><a href="#">Aviso legal</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a wire:navigate href="#">Aviso legal</a></li>
+            <li><a wire:navigate href="#">Contacto</a></li>
             <li>
                 <a href="#">
                     <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"

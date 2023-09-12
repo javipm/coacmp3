@@ -25,7 +25,7 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 ">
                 @foreach($groups as $group)
-                <a class="shadow hover:shadow-xl
+                <a wire:navigate class="shadow hover:shadow-lg
                 @if (count($groups) == 1)
                 col-span-2
                 @else
