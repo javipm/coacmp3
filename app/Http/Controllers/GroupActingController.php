@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Group;
 use App\Models\GroupActing;
 use App\Models\Modality;
+use Jaybizzle\LaravelCrawlerDetect\Facades\LaravelCrawlerDetect;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class GroupActingController extends Controller
@@ -33,6 +34,14 @@ class GroupActingController extends Controller
             title: $group->modality->name.' '.$group->name.' - '.$actingSelected->phase,
             description: 'Descarga el audio de '.$group->name.' de '.$actingSelected->phase.' en formato MP3 y de manera gratuita',
         );
+
+        //Add pageviews
+        if (! LaravelCrawlerDetect::isCrawler()) {
+            $group->timestamps = false;
+            $group->update([
+                'pageviews' => $group->pageviews + 1,
+            ]);
+        }
 
         return view('group-acting', compact('group', 'actings', 'actingSelected', 'initialSong', 'SEOData'));
     }

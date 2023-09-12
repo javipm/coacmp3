@@ -15,6 +15,7 @@ class Author extends Model
     public $fillable = [
         'name',
         'biography',
+        'pageviews',
     ];
 
     public function sluggable(): array

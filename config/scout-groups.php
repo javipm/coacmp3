@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'customRanking' => ['desc(created_at)', 'desc(updated_at)'],
+    'customRanking' => ['desc(pageviews), desc(created_at)', 'desc(updated_at)'],
 
     /*
     |--------------------------------------------------------------------------

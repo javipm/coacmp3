@@ -21,6 +21,7 @@ class Group extends Model
         'director',
         'city',
         'is_completed',
+        'pageviews',
     ];
 
     protected $appends = ['authors_music_id', 'authors_lyrics_id'];
