@@ -9,7 +9,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Page extends Model
 {
-    use HasFactory, Sluggable, HasSEO;
+    use HasFactory, HasSEO, Sluggable;
 
     public $fillable = [
         'name',

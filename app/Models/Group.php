@@ -6,11 +6,12 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Group extends Model
 {
-    use HasFactory, HasSEO, Sluggable, SluggableScopeHelpers;
+    use HasFactory, HasSEO, Searchable, Sluggable, SluggableScopeHelpers;
 
     public $fillable = [
         'name',
@@ -81,5 +82,24 @@ class Group extends Model
     public function getAuthorsLyricsIdAttribute(): array
     {
         return $this->authorsLyrics()->pluck('authors.id')->toArray();
+    }
+
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        $array = $this->transform($array);
+
+        $authorsLyrics = $this->authorsLyrics->map(function ($data) {
+            return [$data['id'] => $data['name']];
+        })->toArray();
+
+        $authorsMusic = $this->authorsMusic->map(function ($data) {
+            return [$data['id'] => $data['name']];
+        })->toArray();
+
+        $array['authors'] = array_unique(array_merge($authorsMusic, $authorsLyrics), SORT_REGULAR);
+
+        return $array;
     }
 }

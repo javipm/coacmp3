@@ -9,8 +9,8 @@ class ModalityController extends Controller
 {
     public function view($modality = '')
     {
-        if(!$modality){
-            return ;
+        if (! $modality) {
+            return;
         }
 
         $modality = Modality::where('slug', $modality)->firstOrFail();

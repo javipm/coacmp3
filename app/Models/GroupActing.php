@@ -7,7 +7,6 @@ use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
-use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class GroupActing extends Model
 {
@@ -51,5 +50,4 @@ class GroupActing extends Model
     {
         return env('APP_URL').'/storage/audios/'.$this->group->year.'/'.$this->filename;
     }
-
 }

@@ -11,6 +11,11 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
     $trail->push('Inicio', route('home'));
 });
 
+Breadcrumbs::for('search', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Búsqueda', route('search'));
+});
+
 // Home > Modality
 Breadcrumbs::for('modality', function (BreadcrumbTrail $trail, $modality) {
     $trail->parent('home');

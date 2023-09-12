@@ -9,7 +9,7 @@
     @livewireStyles
 </head>
 
-<body x-data="{'isSearchModalOpen': false}" x-on:keydown.escape="isSearchModalOpen=false" class="
+<body class="
     bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-50 via-orange-100 to-orange-200
     px-4 md:px-0
     text-gray-700
@@ -22,8 +22,6 @@
         </main>
         <x-layout.footer />
     </div>
-
-    <livewire:search-modal />
 
     @livewireScripts
     @vite('resources/js/app.js')

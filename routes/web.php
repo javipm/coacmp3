@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'view'])->name('home');
 
+Route::view('/busqueda',
+    'search-page'
+)->name('search');
+
 Route::get(
     '/{modality}',
     [App\Http\Controllers\ModalityController::class, 'view']

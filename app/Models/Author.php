@@ -5,11 +5,12 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Author extends Model
 {
-    use HasFactory, Sluggable, HasSEO;
+    use HasFactory, HasSEO, Searchable, Sluggable;
 
     public $fillable = [
         'name',
