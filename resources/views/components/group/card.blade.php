@@ -29,8 +29,18 @@
                 </span>
             </div>
             <span class="col-span-2">
-                {{$group->authorsLyrics->pluck('name')->join(', ', ' y ') }}
+                @foreach ($group->authorsLyrics as $author)
+                @if (isset($outside))
+                <span>{{ $author->name }}</span>
+                @else
+                <a wire:navigate href="{{ route('author', ['author' => $author->slug]) }}"
+                    class="cursor-pointer hover:text-orange-800 hover:underline">{{ $author->name }}</a>
+                @endif
+                @if (!$loop->last && $loop->remaining > 1), @endif
+                @if ($loop->remaining == 1) y @endif
+                @endforeach
             </span>
+
         </span>
     </div>
     @endif
@@ -43,7 +53,16 @@
                 </span>
             </div>
             <span class="col-span-2">
-                {{$group->authorsMusic->pluck('name')->join(', ', ' y ') }}
+                @foreach ($group->authorsMusic as $author)
+                @if (isset($outside))
+                <span>{{ $author->name }}</span>
+                @else
+                <a wire:navigate href="{{ route('author', ['author' => $author->slug]) }}"
+                    class="cursor-pointer hover:text-orange-800 hover:underline">{{ $author->name }}</a>
+                @endif
+                @if (!$loop->last && $loop->remaining > 1), @endif
+                @if ($loop->remaining == 1) y @endif
+                @endforeach
             </span>
         </span>
     </div>

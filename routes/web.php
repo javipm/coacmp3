@@ -20,6 +20,11 @@ Route::view('/busqueda',
 )->name('search');
 
 Route::get(
+    '/autores/{author}',
+    [App\Http\Controllers\AuthorController::class, 'view']
+)->name('author');
+
+Route::get(
     '/{modality}',
     [App\Http\Controllers\ModalityController::class, 'view']
 )->name('modality');

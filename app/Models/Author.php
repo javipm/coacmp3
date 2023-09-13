@@ -15,6 +15,7 @@ class Author extends Model
     public $fillable = [
         'name',
         'biography',
+        'is_featured',
         'pageviews',
     ];
 
@@ -40,5 +41,10 @@ class Author extends Model
     public function groupsMusic(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Group::class, 'groups_authors_music', 'author_id', 'group_id')->withTimestamps();
+    }
+
+    public function groups(): \Illuminate\Database\Eloquent\Collection
+    {
+        return $this->groupsLyrics->merge($this->groupsMusic);
     }
 }

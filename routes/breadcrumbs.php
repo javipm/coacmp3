@@ -11,9 +11,17 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
     $trail->push('Inicio', route('home'));
 });
 
+// Home -> Search
 Breadcrumbs::for('search', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
     $trail->push('Búsqueda', route('search'));
+});
+
+// Home > Author
+Breadcrumbs::for('author', function (BreadcrumbTrail $trail, $author) {
+    $trail->parent('home');
+    $trail->push('Autores');
+    $trail->push($author->name, route('author', ['author' => $author->slug]));
 });
 
 // Home > Modality

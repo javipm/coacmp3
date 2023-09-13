@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Author;
 use App\Models\GroupActing;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -61,6 +62,15 @@ class SitemapGenerator extends Command
             $sitemap->add(
                 Url::create(route('group-acting', ['modality' => $acting->group->modality->slug, 'year' => $acting->group->year, 'group' => $acting->group->slug, 'phase' => strtolower($acting->phase)]))
                     ->setLastModificationDate($acting->created_at)
+            );
+        }
+
+        $authors = Author::orderBy('created_at', 'desc')->get();
+
+        foreach ($authors as $author) {
+            $sitemap->add(
+                Url::create(route('author', ['author' => $author->slug]))
+                    ->setLastModificationDate($author->created_at)
             );
         }
 

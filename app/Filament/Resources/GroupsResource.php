@@ -108,6 +108,12 @@ class GroupsResource extends Resource
                         false => 'No',
                     ])
                     ->label('Relleno'),
+                Tables\Filters\SelectFilter::make('is_featured')
+                    ->options([
+                        true => 'Sí',
+                        false => 'No',
+                    ])
+                    ->label('Destacado'),
                 Tables\Filters\SelectFilter::make('modality_id')
                     ->multiple()
                     ->label('Modalidad')

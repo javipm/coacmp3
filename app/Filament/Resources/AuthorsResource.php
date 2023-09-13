@@ -59,11 +59,17 @@ class AuthorsResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable(),
+                Tables\Columns\ToggleColumn::make('is_featured')->label('Destacado'),
                 Tables\Columns\TextColumn::make('slug')->label('URL'),
                 Tables\Columns\TextColumn::make('modalities.name')->label('Modalidades')->badge()->separator(','),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('is_featured')
+                    ->options([
+                        true => 'Sí',
+                        false => 'No',
+                    ])
+                    ->label('Destacado'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

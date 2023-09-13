@@ -21,6 +21,7 @@ class Group extends Model
         'director',
         'city',
         'is_completed',
+        'is_featured',
         'pageviews',
     ];
 
