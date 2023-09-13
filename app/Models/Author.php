@@ -45,6 +45,6 @@ class Author extends Model
 
     public function groups(): \Illuminate\Database\Eloquent\Collection
     {
-        return $this->groupsLyrics->merge($this->groupsMusic);
+        return $this->groupsLyrics->merge($this->groupsMusic)->sortBy('created_at');
     }
 }

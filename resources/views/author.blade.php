@@ -32,7 +32,7 @@
                     @foreach ($author->groups() as $group)
                     <a class="tag px-2 py-2 mb-2 rounded bg-orange-200 text-orange-800 text-sm hover:bg-orange-300 transition duration-200 ease-in-out"
                         href="{{ route('group', ['modality' => $group->modality->slug, 'year' => $group->year, 'group' => $group->slug]) }}">
-                        {{$group->modality->name }} {{ $group->name }}
+                        {{$group->modality->name }} {{ $group->name }} ({{ $group->year }})
                     </a>
                     @endforeach
                 </ul>
