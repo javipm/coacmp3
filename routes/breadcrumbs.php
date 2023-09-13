@@ -19,7 +19,7 @@ Breadcrumbs::for('search', function (BreadcrumbTrail $trail) {
 // Home > Modality
 Breadcrumbs::for('modality', function (BreadcrumbTrail $trail, $modality) {
     $trail->parent('home');
-    $trail->push($modality->name, route('modality', ['modality' => $modality->slug]));
+    $trail->push(Str::plural($modality->name), route('modality', ['modality' => $modality->slug]));
 });
 
 // Home > Modality > [Group]

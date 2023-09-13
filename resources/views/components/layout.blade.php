@@ -15,7 +15,7 @@
     text-gray-700
     subpixel-antialiased
     ">
-    <div class="flex flex-col min-h-screen h-full">
+    <div class="flex flex-col min-h-screen h-full xl:px-12">
         <x-layout.header />
         <main class="flex-grow ">
             {{ $slot }}

@@ -7,7 +7,7 @@ Puedes buscar de manera cómoda y sencilla las agrupaciones que te interesen en 
 @endsection
 
 <x-layout>
-    <section class="mt-2 mb-2">
+    <section class="mt-2 mb-6">
         {{ Breadcrumbs::render('search') }}
     </section>
 

@@ -1,5 +1,5 @@
 <x-layout :seoModel="$modality">
-    <section class="mt-2 mb-2">
+    <section class="mt-2 mb-6">
         {{ Breadcrumbs::render('modality', $modality) }}
     </section>
 

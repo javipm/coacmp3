@@ -25,11 +25,11 @@ Route::get(
 )->name('modality');
 
 Route::get(
-    '/{year}/{modality}/{group}',
+    '/{modality}/{year}/{group}',
     [App\Http\Controllers\GroupActingController::class, 'view']
 )->name('group');
 
 Route::get(
-    '/{year}/{modality}/{group}/{phase}',
+    '/{modality}/{year}/{group}/{phase}',
     [App\Http\Controllers\GroupActingController::class, 'view']
 )->name('group-acting');

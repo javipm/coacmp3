@@ -10,7 +10,7 @@ use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class GroupActingController extends Controller
 {
-    public function view(string $year = '', string $modality = '', string $group_slug = '', string $phase_slug = ''): \Illuminate\Contracts\View\View
+    public function view(string $modality = '', string $year = '', string $group_slug = '', string $phase_slug = ''): \Illuminate\Contracts\View\View
     {
         $modality_id = Modality::where('slug', $modality)->firstOrFail()->id;
 

@@ -13,6 +13,10 @@
         </div>
     </section>
 
-    <x-welcome.seo-text />
+    @if ($content)
+    <article class="container mt-28 mx-auto text-xs text-gray-600 leading-7 [&>p]:pt-5 [&>p]:pb-2 [&>ul>li]:pl-5">
+        {!! $content !!}
+    </article>
+    @endif
 
 </x-layout>

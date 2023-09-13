@@ -1,10 +1,10 @@
 <x-layout :seoModel="$SEOData">
-    <section class="mt-2 mb-2">
+    <section class="mt-2 mb-6">
         {{ Breadcrumbs::render('group', $group) }}
     </section>
 
     <section class="container w-full mx-auto h-full items-center">
-        <h1 class="font-title text-2xl text-orange-600 mb-8">
+        <h1 class="font-title text-2xl text-orange-600 mb-6">
             {{$group->modality->name}} {{ $group->name }}
         </h1>
 
@@ -15,7 +15,7 @@
                     :actingSelected="$actingSelected" />
             </article>
 
-            <aside class="">
+            <aside class="flex flex-col">
                 <livewire:aside-related-component />
             </aside>
         </div>
