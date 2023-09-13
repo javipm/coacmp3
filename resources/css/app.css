@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Noto+Sans+Adlam:wght@400;500;600;700&display=swap");
-@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+@import "./boxicons/boxicons.css";
 
 @tailwind base;
 @tailwind components;
