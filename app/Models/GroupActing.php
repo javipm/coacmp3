@@ -48,6 +48,6 @@ class GroupActing extends Model
 
     public function getUrlAttribute(): string
     {
-        return env('APP_URL').'/storage/audios/'.$this->group->year.'/'.$this->filename;
+        return env('APP_URL_AUDIOS').'/storage/audios/'.$this->group->year.'/'.$this->filename;
     }
 }
