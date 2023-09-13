@@ -3,6 +3,10 @@
         {{ Breadcrumbs::render('modality', $modality) }}
     </section>
 
+    @section('breadcrumbs-json-ld')
+    {{ Breadcrumbs::view('breadcrumbs::json-ld', 'modality', $modality) }}
+    @endsection
+
     <section class="container w-full mx-auto h-full items-center">
         <h1 class="font-title text-2xl text-orange-600 mb-6">
             {{ Str::plural($modality->name) }}

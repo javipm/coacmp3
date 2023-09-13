@@ -23,6 +23,7 @@
         "ralphjsmit/laravel-filament-seo": "^1.2",
         "ralphjsmit/laravel-seo": "^1.4",
         "rappasoft/laravel-livewire-tables": "dev-v3-develop",
+        "spatie/laravel-sitemap": "^6.3",
         "symfony/browser-kit": "^6.3",
         "symfony/http-client": "^6.3"
     },

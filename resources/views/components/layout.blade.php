@@ -7,6 +7,8 @@
     <x-layout.seo :model="$seoModel ?? null" />
     @vite('resources/css/app.css')
     @livewireStyles
+
+    @yield('breadcrumbs-json-ld')
 </head>
 
 <body class="

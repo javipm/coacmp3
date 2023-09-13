@@ -11,5 +11,9 @@ Puedes buscar de manera cómoda y sencilla las agrupaciones que te interesen en 
         {{ Breadcrumbs::render('search') }}
     </section>
 
+    @section('breadcrumbs-json-ld')
+    {{ Breadcrumbs::view('breadcrumbs::json-ld', 'search') }}
+    @endsection
+
     <livewire:search-component />
 </x-layout>

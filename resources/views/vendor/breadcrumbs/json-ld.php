@@ -3,19 +3,19 @@
 use Illuminate\Support\Facades\Request;
 
 $json = [
-    '@context'        => 'https://schema.org',
-    '@type'           => 'BreadcrumbList',
+    '@context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
     'itemListElement' => [],
 ];
 
 foreach ($breadcrumbs as $i => $breadcrumb) {
     $json['itemListElement'][] = [
-        '@type'    => 'ListItem',
+        '@type' => 'ListItem',
         'position' => $i + 1,
-        'item'     => [
-            '@id'   => $breadcrumb->url ?: Request::fullUrl(),
-            'name'  => $breadcrumb->title,
-            'image' => $breadcrumb->image ?? null,
+        'item' => [
+            '@id' => $breadcrumb->url ?: Request::fullUrl(),
+            'name' => $breadcrumb->title,
+            // 'image' => $breadcrumb->image ?? null,
         ],
     ];
 }

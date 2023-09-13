@@ -1,4 +1,9 @@
 <x-layout :seoModel="$SEOData">
+
+    @section('breadcrumbs-json-ld')
+    {{ Breadcrumbs::view('breadcrumbs::json-ld', 'home') }}
+    @endsection
+
     <canvas id="confetti" class="overflow-hidden w-full h-full m-0 absolute left-0 top-0 z-0"></canvas>
 
     <x-welcome.hero />

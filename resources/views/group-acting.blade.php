@@ -3,6 +3,10 @@
         {{ Breadcrumbs::render('group', $group) }}
     </section>
 
+    @section('breadcrumbs-json-ld')
+    {{ Breadcrumbs::view('breadcrumbs::json-ld', 'group', $group) }}
+    @endsection
+
     <section class="container w-full mx-auto h-full items-center">
         <h1 class="font-title text-2xl text-orange-600 mb-6">
             {{$group->modality->name}} {{ $group->name }}
