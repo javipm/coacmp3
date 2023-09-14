@@ -4,7 +4,7 @@
     {{ Breadcrumbs::view('breadcrumbs::json-ld', 'home') }}
     @endsection
 
-    <canvas id="confetti" class="overflow-hidden w-full h-full m-0 absolute left-0 top-0 z-0"></canvas>
+    <canvas id="confetti" class="overflow-hidden w-full h-screen m-0 absolute left-0 top-0 z-0"></canvas>
 
     <x-welcome.hero />
 

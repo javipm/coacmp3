@@ -3,8 +3,10 @@
         <span class="font-light text-xs text-gray-900 tracking-wide flex">{{ date('Y') }} - Desarrollado
             por</span>
         <a class="text-xs ml-1 text-orange-600 font-bold  tracking-wide flex" href="https://amarillolimon.net">
-            Amarillo Limón 🍋
+            Amarillo Limón
         </a>
+        <span class="text-xs ml-1 text-orange-600 font-bold  tracking-wide flex cursor-pointer"
+            x-on:click="emojiRain = !emojiRain">🍋</span>
     </div>
 
     <nav class="">
