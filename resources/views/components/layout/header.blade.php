@@ -4,7 +4,7 @@
             class="text-xl text-orange-700 font-bold uppercase tracking-wide font-title flex items-center justify-center transition hover:scale-110 hover:text-orange-900"
             href="/">
             <i class='bx bx-party bx-tada mr-2 text-3xl'></i>
-            COAC Audios
+            COAC MP3
         </a>
     </div>
 
