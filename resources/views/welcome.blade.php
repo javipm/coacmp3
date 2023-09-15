@@ -8,7 +8,7 @@
 
     <x-welcome.hero />
 
-    <section class="container mt-20 mx-auto" id="last-actings">
+    <section class="container mt-20 mx-auto" id="ultimos-audios">
         <h2 class="text-3xl text-center font-semibold pb-5 text-orange-600 font-title">Últimos audios
             de actuaciones
         </h2>

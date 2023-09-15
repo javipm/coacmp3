@@ -19,8 +19,8 @@ html {
 :target:before {
     content: "";
     display: block;
-    height: 50px;
-    margin: -50px 0 0;
+    height: 80px;
+    margin: -80px 0 0;
 }
 
 /** Livewire navigation **/
@@ -35,6 +35,12 @@ html {
 #nprogress .spinner-icon {
     border-top-color: #ea580c !important;
     border-left-color: #ea580c !important;
+}
+
+@media screen and (max-width: 768px) {
+    #nprogress .spinner-icon {
+        display: none !important;
+    }
 }
 
 /** Lemon effect **/

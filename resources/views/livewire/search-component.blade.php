@@ -10,7 +10,7 @@
 
         <input wire:model.live.debounce.300ms="query" placeholder="Introduce el nombre de una agrupación o autor..."
             type="search"
-            class="block w-full bg-white focus:outline-none focus:bg-white focus:shadow text-gray-900 rounded-lg px-4 py-3">
+            class="block w-full bg-white focus:outline-none focus:bg-white focus:shadow text-gray-900 rounded-lg px-4 py-3 text-xs lg:text-md">
 
         @if(!empty($groups) && count($groups) > 0)
         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" wire:loading.class="hidden">

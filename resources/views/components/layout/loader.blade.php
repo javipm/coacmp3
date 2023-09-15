@@ -1,5 +1,5 @@
 <div role="status"
-    class="loader absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2 transition-opacity duration-500 z-50">
+    class="loader absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2 transition-opacity duration-500 z-30">
     <svg aria-hidden="true" class="w-24 h-24 mr-2 text-gray-300 animate-spin fill-orange-600" viewBox="0 0 100 101"
         fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

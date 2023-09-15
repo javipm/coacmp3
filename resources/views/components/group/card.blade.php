@@ -1,10 +1,10 @@
 <div class="c-card block bg-white">
-    <div class="relative h-14 p-4  bg-orange-600 text-white rounded-t">
-        <div class="font-bold">
+    <div class="relative h-20 2xl:h-16 p-4  bg-orange-600 text-white rounded-t">
+        <div class="font-bold flex h-full">
             <span
-                class="inline-block px-2 py-1 mr-2 leading-none bg-orange-200 text-orange-800 rounded-full font-semibold uppercase tracking-wide text-md">{{
+                class="m-auto ml-0 mr-4 px-2 py-1 [text-wrap:balance] leading-none bg-orange-200 text-orange-800 rounded-full font-semibold uppercase tracking-wide text-md">{{
                 $group->year }}</span>
-            <span class="text-md">{{ $group->name }}</span>
+            <span class="text-md my-auto">{{ $group->name }}</span>
         </div>
         {{-- <p class="text-sm">{{ $acting->created_at->format('d/m/Y') }}</p> --}}
     </div>

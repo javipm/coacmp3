@@ -1,4 +1,4 @@
-<div class="hidden xl:block px-10 rounded w-full h-full">
+<div class="block px-10 rounded w-full h-full">
     <div class="h-14 py-4 text-center">
         <h3 class="text-md font-bold text-orange-800">También te puede interesar...</h3>
     </div>

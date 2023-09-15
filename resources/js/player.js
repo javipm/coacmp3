@@ -41,7 +41,7 @@ export default function run() {
                 slider.style.backgroundSize = percentage + "% 100%";
             },
             initialized: function () {
-                document.querySelector(".loader").classList.add("opacity-0");
+                document.querySelector(".loader").classList.add("hidden");
 
                 document
                     .querySelector("#audio-player")

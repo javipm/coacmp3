@@ -4,7 +4,7 @@
             <x-layout.loader />
             <div id="audio-player" class="opacity-0 transition-opacity duration-500 md:grid md:grid-cols-2">
                 <div class="">
-                    <div class="px-10 pt-5 pb-4 flex items-center z-50">
+                    <div class="px-10 pt-5 pb-4 flex items-center z-40">
                         <div class="flex flex-col">
                             <h2 data-amplitude-song-info="name" class="text-xl  leading-7 text-slate-900 ">{{
                                 $actingSelected->phase }} - {{ $actingSelected->created_at->format('d/m/Y') }}</h2>
@@ -12,9 +12,9 @@
                                 $actingSelected->group->name }}</span>
                         </div>
                     </div>
-                    <div class="w-full flex flex-col px-10 pb-6 z-60">
+                    <div class="w-full flex flex-col px-10 pb-6 z-40">
                         <input type="range" id="song-percentage-played"
-                            class="z-10 amplitude-song-slider mb-3 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
+                            class="amplitude-song-slider mb-3 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
                             step=".1" />
                         <div class="flex w-full justify-between">
                             <span class="amplitude-current-time text-xs tracking-wide  text-gray-500">-</span>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div
-                    class="h-control-panel px-10 py-6 bg-control-panel-light-background flex items-center justify-between z-50 ">
+                    class="h-control-panel px-10 py-6 bg-control-panel-light-background flex items-center justify-between z-40 ">
 
                     <div class="cursor-pointer amplitude-prev">
                         <i class=' bx bx-skip-previous text-5xl m-0 text-gray-400'></i>
