@@ -25,3 +25,6 @@ function checkPosition() {
 }
 
 if (nav !== null) window.addEventListener("scroll", checkPosition);
+
+/** Force light mode tailwind */
+localStorage.theme = "light";
