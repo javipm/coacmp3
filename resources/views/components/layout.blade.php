@@ -9,6 +9,8 @@
     @livewireStyles
 
     @yield('breadcrumbs-json-ld')
+
+    <x-layout.google-analytics />
 </head>
 
 <body x-data='{emojiRain: false, mobileMenuOpen: false, isMobile: !(window.innerWidth > 768)}'
