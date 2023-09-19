@@ -7,7 +7,7 @@ use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class WelcomeController extends Controller
 {
-    public function view(): \Illuminate\Contracts\View\View
+    public function home(): \Illuminate\Contracts\View\View
     {
         $SEOData = new SEOData(
             title: 'Audios de Carnaval de Cádiz COAC '.env('APP_AUDIO_YEAR').' en MP3 - Comparsas - Chirigotas - Cuartetos - Coros',
@@ -18,5 +18,17 @@ class WelcomeController extends Controller
         $content = Page::where('slug', 'home')->first()->content;
 
         return view('welcome', compact('SEOData', 'content'));
+    }
+
+    public function legal(): \Illuminate\Contracts\View\View
+    {
+        $SEOData = new SEOData(
+            title: 'Aviso legal',
+            description: 'Aviso legal COAC MP3.',
+        );
+
+        $content = Page::where('slug', 'aviso-legal')->first()->content;
+
+        return view('legal', compact('SEOData', 'content'));
     }
 }

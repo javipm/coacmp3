@@ -10,7 +10,7 @@ return [
     /**
      * Enable or Disable automatic injection of assets
      */
-    'inject_assets' => true,
+    'inject_assets' => false,
 
     /**
      * Enable or Disable automatic injection of assets

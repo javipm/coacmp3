@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\WelcomeController::class, 'view'])->name('home');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'home'])->name('home');
+Route::get('/aviso-legal', [App\Http\Controllers\WelcomeController::class, 'legal'])->name('legal');
 
 Route::view('/busqueda',
     'search-page'

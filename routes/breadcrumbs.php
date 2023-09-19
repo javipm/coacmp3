@@ -11,6 +11,12 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
     $trail->push('Inicio', route('home'));
 });
 
+// Home -> Legal
+Breadcrumbs::for('legal', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Aviso legal', route('legal'));
+});
+
 // Home -> Search
 Breadcrumbs::for('search', function (BreadcrumbTrail $trail) {
     $trail->parent('home');

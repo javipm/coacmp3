@@ -1,8 +1,7 @@
 <header class="sticky top-0 z-10 backdrop-blur-sm">
     <div class="container mx-auto flex items-center justify-between py-5 ">
         <div class="pl-4 md:pl-0 flex flex-grow basis-0 ">
-            <a wire:navigate
-                class="text-xl text-orange-700 font-bold uppercase tracking-wide font-title flex items-center justify-center transition hover:scale-110 hover:text-orange-900"
+            <a class="text-xl text-orange-700 font-bold uppercase tracking-wide font-title flex items-center justify-center transition hover:scale-110 hover:text-orange-900"
                 href="/">
                 <i class='bx bx-party bx-tada mr-2 text-3xl'></i>
                 COAC MP3
@@ -24,19 +23,18 @@
         [&>li>a:hover]:transition [&>li>a:hover]:text-orange-900
         [&>li>a:hover]:scale-110">
                 <li><a x-on:click="mobileMenuOpen = false" href="/#ultimos-audios">Últimos audios</a></li>
-                <li><a x-on:click="mobileMenuOpen = false" wire:navigate
-                        href="{{ route('modality', 'comparsas') }}">Comparsas</a></li>
-                <li><a x-on:click="mobileMenuOpen = false" wire:navigate
-                        href="{{ route('modality', 'chirigotas') }}">Chirigotas</a></li>
-                <li><a x-on:click="mobileMenuOpen = false" wire:navigate
-                        href="{{ route('modality', 'coros') }}">Coros</a></li>
-                <li><a x-on:click="mobileMenuOpen = false" wire:navigate
-                        href="{{ route('modality', 'cuartetos') }}">Cuartetos</a></li>
+                <li><a x-on:click="mobileMenuOpen = false" href="{{ route('modality', 'comparsas') }}">Comparsas</a>
+                </li>
+                <li><a x-on:click="mobileMenuOpen = false" href="{{ route('modality', 'chirigotas') }}">Chirigotas</a>
+                </li>
+                <li><a x-on:click="mobileMenuOpen = false" href="{{ route('modality', 'coros') }}">Coros</a></li>
+                <li><a x-on:click="mobileMenuOpen = false" href="{{ route('modality', 'cuartetos') }}">Cuartetos</a>
+                </li>
             </ul>
         </nav>
 
         <div class="pr-4 md:pr-0 flex basis-0 justify-end">
-            <a wire:navigate href="{{ route('search') }}" title="Búsqueda" class=" text-orange-700 cursor-pointer transition
+            <a href="{{ route('search') }}" title="Búsqueda" class=" text-orange-700 cursor-pointer transition
             hover:scale-125 hover:text-orange-900">
                 <i class='bx bx-search-alt  text-3xl'></i>
             </a>

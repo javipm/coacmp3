@@ -15,15 +15,14 @@
         [&>li>a]:text-xs [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:text-orange-600  [&>li>a]:inline-block [&>li>a]:px-2
         [&>li>a]:font-light
         [&>li>a:hover]:transition [&>li>a:hover]:text-orange-800">
-            <li><a wire:navigate href="#">Aviso legal</a></li>
-            <li><a wire:navigate href="#">Contacto</a></li>
+            <li><a href="/aviso-legal">Aviso legal</a></li>
             <li>
-                <a href="#">
+                <a href="https://www.twitter.com/amlimon/" target="_blank">
                     <i class='bx bxl-twitter'></i>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://www.instagram.com/amarillolimonm/" target="_blank">
                     <i class='bx bxl-instagram'></i>
                 </a>
             </li>
