@@ -18,8 +18,12 @@ class GroupActingController extends Controller
         $actings = GroupActing::where(['group_id' => $group->id])->orderBy('created_at', 'asc')->get();
         $actingSelected = GroupActing::where(['group_id' => $group->id, 'phase' => $phase_slug])->first();
 
+        $description = $group->description;
+
         if (! $actingSelected) {
             $actingSelected = $actings[0];
+        } else {
+            $description = $actingSelected->description;
         }
 
         $initialSong = 0;
@@ -32,7 +36,7 @@ class GroupActingController extends Controller
 
         $SEOData = new SEOData(
             title: $group->modality->name.' '.$group->name.' - '.$actingSelected->phase,
-            description: 'Descarga el audio de '.$group->name.' de '.$actingSelected->phase.' en formato MP3 y de manera gratuita',
+            description: 'Escucha y descarga el audio de '.$group->name.' de '.$actingSelected->phase.' en formato MP3 y de manera gratuita',
         );
 
         //Add pageviews
@@ -43,6 +47,6 @@ class GroupActingController extends Controller
             ]);
         }
 
-        return view('group-acting', compact('group', 'actings', 'actingSelected', 'initialSong', 'SEOData'));
+        return view('group-acting', compact('group', 'actings', 'actingSelected', 'initialSong', 'description', 'SEOData'));
     }
 }

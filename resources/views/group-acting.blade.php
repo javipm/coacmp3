@@ -14,6 +14,11 @@
 
         <div class="xl:grid grid-cols-3 gap-10">
             <article class="col-span-2">
+                @if ($description)
+                <p class="container  mb-6 mx-auto text-xs text-gray-600 leading-7">
+                    {!! $description !!}
+                </p>
+                @endif
                 <x-group.card :group="$group" />
                 <x-group.audio-player :actings="$actings" :initialSong="$initialSong"
                     :actingSelected="$actingSelected" />

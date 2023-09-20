@@ -35,7 +35,7 @@ class SitemapGenerator extends Command
                 ->setLastModificationDate(Carbon::yesterday())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 ->setPriority(0.1))
-            ->add(Url::create('/search')
+            ->add(Url::create('/busqueda')
                 ->setLastModificationDate(Carbon::yesterday())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 ->setPriority(0.5))

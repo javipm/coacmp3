@@ -18,6 +18,7 @@ class GroupActing extends Model
         'phase',
         'filename',
         'group_id',
+        'description',
         'created_at',
         'updated_at',
     ];
