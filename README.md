@@ -1,6 +1,6 @@
 <p  align="center"><a  href="https://coacmp3.com"  target="_blank"><img  src="https://coacmp3.com/assets/falla.png"  width="400"  alt="Laravel Logo"></a></p>
 
-## COACMP3- Descarga de audios del Carnaval de Cádiz
+## COACMP3 - Descarga de audios del Carnaval de Cádiz
 
 [COACMP3](https://coacmp3.com) es una web para escuchar o descargar cómodamente las actuaciones del Carnaval de Cádiz (COAC) en formato MP3.
 
@@ -32,4 +32,18 @@ Para lanzar la aplicación en local se debe:
 
 -   Se deberá poder acceder a la aplicación en http://localhost:8000
 
+### Uso
+
 El panel de Filament está desplegado en la ruta `/backamarillo`
+
+La aplicación tiene varios comandos que se deben usar para ir añadiendo los audios a la BD:
+
+-   `php artisan app:refresh-actings` que consiste en 3 cosas:
+
+    -   Busca los ficheros MP3 disponibles en la carpeta `APP_AUDIO_FILES`. Los ficheros deben seguir la estructura _MODALIDAD, GRUPO - FASE.mp3_
+    -   Busca las actuaciones que no están añadidas en la BD
+    -   Rastrea la información del grupo y la rellena si es posible
+    -   Envía un email resumen de las actuaciones importadas y posibles errores
+
+-   `php artisan app:sitemap-generator` que genera el sitemap.xml de la aplicación
+-   `php artisan app:fill-groups-description` mediante un spinner rellena automáticamente las descripciones de los grupos y actuaciones, para que en la web haya texto de algún tipo
