@@ -26,6 +26,11 @@
                     <i class='bx bxl-instagram'></i>
                 </a>
             </li>
+            <li>
+                <a href="https://github.com/javipm/coacmp3" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
+            </li>
         </ul>
     </nav>
 </footer>
