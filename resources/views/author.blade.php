@@ -1,4 +1,4 @@
-<x-layout :seoModel="$author">
+<x-layout :seoModel="$SEOData">
     <section class="mt-2 mb-6">
         {{ Breadcrumbs::render('author', $author) }}
     </section>
