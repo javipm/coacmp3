@@ -14,7 +14,7 @@ class AuthorController extends Controller
 
         $SEOData = new SEOData(
             title: $author->name,
-            description: 'Descarga los audios de las agrupaciones de '.$author->name.' en formato MP3 y de manera gratuita',
+            description: 'Descarga los audios de las agrupaciones de '.$author->name.' del Carnaval de Cádiz en formato MP3 y de manera gratuita',
         );
 
         //Add pageviews
