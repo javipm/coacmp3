@@ -11,6 +11,7 @@
     @yield('breadcrumbs-json-ld')
 
     <x-layout.google-analytics />
+    <x-layout.google-adsense />
 </head>
 
 <body x-data='{emojiRain: false, mobileMenuOpen: false, isMobile: !(window.innerWidth > 768)}'

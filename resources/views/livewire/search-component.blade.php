@@ -8,6 +8,19 @@
             Búsqueda de agrupaciones
         </h1>
 
+        <div class="mb-6 text-center">
+            <div class="ad inline-block w-[300px] h-[250px] md:w-[728px] md:h-[90px] mx-auto">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Arriba -->
+                <ins class="adsbygoogle ad-bottom" style="display:inline-block"
+                    data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}"
+                    data-ad-slot="{{ env('APP_ADSENSE_SLOT_ARRIBA') }}"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
         <input wire:model.live.debounce.300ms="query" placeholder="Introduce el nombre de una agrupación o autor..."
             type="search"
             class="block w-full bg-white focus:outline-none focus:bg-white focus:shadow text-gray-900 rounded-lg px-4 py-3 text-xs lg:text-md">

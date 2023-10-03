@@ -13,11 +13,35 @@
         </h1>
 
         @if($modality->description)
+        <div class="mb-6 text-center">
+            <div class="ad inline-block w-[300px] h-[250px] md:w-[728px] md:h-[90px] mx-auto">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Arriba -->
+                <ins class="adsbygoogle ad-bottom" style="display:inline-block"
+                    data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}"
+                    data-ad-slot="{{ env('APP_ADSENSE_SLOT_ARRIBA') }}"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
         <article class="mb-10 md:mb-0
             [&>h3]:text-md [&>h3]:font-title [&>h3]:text-orange-800 [&>h3]:pb-4
             [&>p]:text-xs [&>p]:pb-4 [&>p]:text-gray-600">
             {!! $modality->description !!}
         </article>
+        <div class="mt-6 mb-6 text-center">
+            <div class="ad inline-block w-[300px] h-[250px] md:w-[970px] md:h-[250px] mx-auto">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Abajo -->
+                <ins class="adsbygoogle ad-bottom" style="display:inline-block"
+                    data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}"
+                    data-ad-slot="{{ env('APP_ADSENSE_SLOT_ABAJO') }}"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
 
         <article>
             <h2 class="font-title text-md text-orange-800 pb-4">{{ Str::plural($modality->name) }}
