@@ -166,3 +166,7 @@ html {
     -webkit-animation-delay: 3s, 1.5s;
     animation-delay: 3s, 1.5s;
 }
+
+ins.adsbygoogle[data-ad-status="unfilled"] {
+    display: none !important;
+}
