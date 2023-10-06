@@ -25,6 +25,8 @@ class SearchComponent extends Component
 
     public function render()
     {
+        $this->dispatch('search-completed');
+
         return view('livewire.search-component');
     }
 }

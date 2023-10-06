@@ -18,7 +18,7 @@
     x-on:resize.window="isMobile = !(window.innerWidth > 768)" class="
     bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-50 via-orange-100 to-orange-200
     text-gray-700
-    subpixel-antialiased
+    subpixel-antialiased min-h-screen
     " :class="{'overflow-hidden': mobileMenuOpen, 'overflow-auto': !mobileMenuOpen}">
     <div class="flex flex-col min-h-screen h-full xl:px-12">
         <x-layout.header />
