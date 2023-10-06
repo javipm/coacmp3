@@ -20,12 +20,13 @@
                 </p>
                 @endif
                 <div class="mb-6 text-center">
-                    <div class="ad inline-block w-[300px] h-[250px] md:w-[728px] md:h-[90px] mx-auto">
+                    <div class="ad block w-[300px] h-[250px] md:w-[728px] md:h-[90px] mx-auto">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <!-- Arriba -->
-                        <ins class="adsbygoogle ad-bottom" style="display:inline-block"
+                        <ins class="adsbygoogle ad-top mx-auto" style="display:block"
                             data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}"
-                            data-ad-slot="{{ env('APP_ADSENSE_SLOT_ARRIBA') }}"></ins>
+                            data-ad-slot="{{ env('APP_ADSENSE_SLOT_ARRIBA') }}" data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
@@ -36,12 +37,13 @@
                     :actingSelected="$actingSelected" />
 
                 <div class="mt-6 text-center">
-                    <div class="ad inline-block w-[300px] h-[250px] md:w-[728px] md:h-[90px] mx-auto">
+                    <div class="ad block w-[300px] h-[250px] md:w-[728px] md:h-[90px] mx-auto">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <!-- Abajo -->
-                        <ins class="adsbygoogle ad-bottom" style="display:inline-block"
+                        <ins class="adsbygoogle ad-bottom mx-auto" style="display:block"
                             data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}"
-                            data-ad-slot="{{ env('APP_ADSENSE_SLOT_ABAJO') }}"></ins>
+                            data-ad-slot="{{ env('APP_ADSENSE_SLOT_ABAJO') }}" data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
@@ -50,13 +52,14 @@
             </article>
 
             <aside class="flex flex-col">
-                <div class="ad d-none xl:inline-block xl:w-[300px] xl:h-[600px] mx-auto">
+                <div class="ad d-none xl:block xl:w-[300px] xl:h-[600px] mx-auto">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
                     <!-- Lateral -->
-                    <ins class="adsbygoogle ad-lateral" style="display:inline-block"
+                    <ins class="adsbygoogle ad-lateral mx-auto" style="display:block"
                         data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}"
-                        data-ad-slot="{{ env('APP_ADSENSE_SLOT_LATERAL') }}"></ins>
+                        data-ad-slot="{{ env('APP_ADSENSE_SLOT_LATERAL') }}" data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
