@@ -28,7 +28,8 @@
         @if(!empty($groups) && count($groups) > 0)
         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" wire:loading.class="hidden">
             @foreach($groups as $i => $group)
-            <a href="{{ route('group', [ 'modality' => $group->modality->slug, 'year' => $group->year, 'group' => $group->slug ]) }}"
+            <a wire:key="{{ $group->id }}"
+                href="{{ route('group', [ 'modality' => $group->modality->slug, 'year' => $group->year, 'group' => $group->slug ]) }}"
                 class="bg-white block w-full p-3 border border-orange-50 shadow hover:shadow-lg text-sm rounded hover:bg-gray-75">
 
                 <div class="w-full">
