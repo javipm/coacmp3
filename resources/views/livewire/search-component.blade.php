@@ -76,11 +76,5 @@
 </div>
 
 <script>
-    document.addEventListener('livewire:init', () => {
-        (adsbygoogle = window.adsbygoogle || []).push({})
-
-        Livewire.hook('morph.updating', ({ el, toEl, component }) => {
-            (adsbygoogle = window.adsbygoogle || []).push({})
-        })
-    });
+    (adsbygoogle = window.adsbygoogle || []).push({})
 </script>
