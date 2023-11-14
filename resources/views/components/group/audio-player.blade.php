@@ -59,14 +59,17 @@
                 <br />
                 <span class="text-xs text-gray-400">{{ $acting->created_at->format('d/m/Y') }}</span>
             </div>
-            <button data-amplitude-song-index="{{ $loop->index }}" x-on:click="play = true; track={{ $loop->index }}"
-                class="amplitude-play-pause px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
+            <button title="Reproducir" data-amplitude-song-index="{{ $loop->index }}"
+                x-on:click="play = true; track={{ $loop->index }}"
+                class="amplitude-play-pause flex items-center gap-x-2 px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
                 <i x-transition x-cloak class='bx text-xl'
                     :class="track != {{ $loop->index }} ? 'bx-play-circle' : 'bxl-deezer bx-flashing'"></i>
+                <span :class="track != {{ $loop->index }} ? 'text-xs' : 'hidden'">Reproducir</span>
             </button>
-            <a download href="{{ $acting->url }}"
-                class="px-4 py-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
+            <a title="Descarga" href="{{ $acting->url }}" download target="_blank"
+                class="px-4 py-2 flex items-center gap-x-2 text-orange-600 hover:bg-orange-500 hover:text-white group focus:outline-none">
                 <i class='bx bx-download text-xl'></i>
+                <span class="text-xs">Descarga</span>
             </a>
         </li>
         @endforeach

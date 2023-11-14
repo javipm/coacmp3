@@ -21,7 +21,7 @@ Puedes buscar de manera cómoda y sencilla las agrupaciones que te interesen en 
         </h1>
 
         <div class="mb-6 text-center">
-            <div class="ad block w-[300px] h-[250px] md:w-[728px] md:h-[90px] lg:w-[970px] lg:h-[90px] mx-auto">
+            <div class="ad block w-full h-[250px] mx-auto">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Arriba -->
                 <ins class="adsbygoogle ad-top" style="display:block" data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}"

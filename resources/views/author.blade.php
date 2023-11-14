@@ -12,6 +12,19 @@
             {{ $author->name }}
         </h1>
 
+        <div class="mb-6 text-center">
+            <div class="ad block w-full h-[250px]  mx-auto">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Arriba -->
+                <ins class="adsbygoogle ad-top mx-auto" style="display:block"
+                    data-ad-client="{{ env('APP_ADSENSE_CLIENT') }}" data-ad-slot="{{ env('APP_ADSENSE_SLOT_ARRIBA') }}"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
         <div class="md:grid grid-cols-3 gap-10">
             @if($author->biography)
             <article class="md:col-span-2 mb-10 md:mb-0

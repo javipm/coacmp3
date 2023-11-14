@@ -14,7 +14,7 @@
 
         @if($modality->description)
         <div class="mb-6 text-center">
-            <div class="ad block w-[300px] h-[250px] md:w-[728px] md:h-[90px] lg:w-[970px] lg:h-[90px] mx-auto">
+            <div class="ad block w-full h-[250px]  mx-auto">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Arriba -->
                 <ins class="adsbygoogle ad-top mx-auto" style="display:block"
@@ -31,7 +31,7 @@
             {!! $modality->description !!}
         </article>
         <div class="mt-6 mb-6 text-center">
-            <div class="ad block w-[300px] h-[250px] md:w-[970px] md:h-[250px] mx-auto">
+            <div class="ad block w-full h-[250px] mx-auto">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Abajo -->
                 <ins class="adsbygoogle ad-bottom mx-auto" style="display:block"

@@ -15,7 +15,7 @@
 
         <div class="max-w-5xl mx-auto">
             <div class="mb-2 text-center">
-                <div class="ad block w-[300px] h-[250px] md:w-[728px] md:h-[90px] lg:w-[970px] lg:h-[90px] mx-auto">
+                <div class="ad block w-full h-[90px] mx-auto">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Arriba -->
                     <ins class="adsbygoogle ad-top mx-auto" style="display:block"
@@ -29,7 +29,7 @@
             </div>
             @livewire('tables.last-actings-table')
             <div class="mt-12 text-center">
-                <div class="ad block w-[300px] h-[250px] md:w-[970px] md:h-[250px] mx-auto">
+                <div class="ad block w-full mx-auto">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Abajo -->
                     <ins class="adsbygoogle ad-bottom mx-auto" style="display:block"
