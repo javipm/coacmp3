@@ -6,8 +6,8 @@
 
         <div class="mt-12 md:mt-8 text-sm md:text-md font-light">
             Desde aquí podrás descargar las actuaciones de las agrupaciones del Concurso Oficial de Agrupaciones del
-            Carnaval de Cádiz en formato MP3. Podrás encontrar las <h2 class="inline">actuaciones del COAC del año 2022
-                y 2023.</h2>
+            Carnaval de Cádiz en formato MP3. Podrás encontrar las <h2 class="inline">actuaciones del COAC del año 2022,
+                2023 y 2024.</h2>
             <br /><br />
             Todos los audios son extraidos cada madrugada de los vídeos que sube <a class="text-orange-700"
                 rel="nofollow" href="https://www.youtube.com/channel/UCpOz3CN6mDlxkE7-m5AS1aQ"
