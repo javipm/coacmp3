@@ -36,7 +36,7 @@ class GroupActingController extends Controller
 
         $SEOData = new SEOData(
             title: $group->modality->name.' '.$group->name.' - '.$actingSelected->phase,
-            description: 'Escucha y descarga el audio de '.$group->name.' de '.$actingSelected->phase.' en formato MP3 y de manera gratuita',
+            description: 'Escucha y descarga el audio de '.$group->name.' de '.$actingSelected->phase.' del Concurso Oficial de Agrupaciones del Carnaval de Cádiz (COAC) '.$group->year.' en formato MP3 y de manera gratuita',
         );
 
         //Add pageviews

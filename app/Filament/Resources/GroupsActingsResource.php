@@ -54,6 +54,7 @@ class GroupsActingsResource extends Resource
                         ->required()
                         ->maxLength(255)
                         ->hiddenOn('create'),
+                    Forms\Components\RichEditor::make('description')->label('Descripción')->columnSpan('full'),
                 ]),
             ]);
     }
