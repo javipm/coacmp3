@@ -12,7 +12,7 @@ class SearchComponent extends Component
 
     public function mount()
     {
-        $this->groups = \App\Models\Group::search($this->query)->within('groups_pageviews_desc')->take(12)->orderBy('pageviews', 'desc')->get();
+        $this->groups = \App\Models\Group::search($this->query)->where('year', env('APP_AUDIO_YEAR'))->within('groups_pageviews_desc')->take(12)->orderBy('pageviews', 'desc')->get();
     }
 
     public function updatedQuery()

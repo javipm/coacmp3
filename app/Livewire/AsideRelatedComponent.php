@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Models\Group;
 use Livewire\Component;
+use App\Models\Group;
 
 class AsideRelatedComponent extends Component
 {
@@ -11,7 +11,7 @@ class AsideRelatedComponent extends Component
 
     public function mount()
     {
-        $this->groups = Group::take(15)->orderBy('pageviews', 'desc')->get();
+        $this->groups = Group::take(15)->where('year', env('APP_AUDIO_YEAR'))->orderBy('pageviews', 'desc')->get();
     }
 
     public function render()
