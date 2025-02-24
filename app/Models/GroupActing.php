@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use Cviebrock\EloquentSluggable\Sluggable;
-use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class GroupActing extends Model
 {
@@ -29,6 +29,7 @@ class GroupActing extends Model
         'Preliminares' => 'Preliminares',
         'Cuartos' => 'Cuartos',
         'Semifinales' => 'Semifinales',
+        'Semifinal' => 'Semifinales',
         'Final' => 'Final',
     ];
 
