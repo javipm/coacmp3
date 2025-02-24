@@ -2,8 +2,8 @@
 
 namespace App\Library;
 
-use App\Models\GroupActing;
 use App\Models\Modality;
+use App\Models\GroupActing;
 
 class ManageAudioFiles
 {
@@ -46,6 +46,10 @@ class ManageAudioFiles
 
                     if ($phase == 'Gran Final') {
                         $phase = 'Final';
+                    }
+
+                    if ($phase == 'Semifinal') {
+                        $phase = 'Semifinales';
                     }
                 }
 

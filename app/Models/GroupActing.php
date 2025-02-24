@@ -29,7 +29,6 @@ class GroupActing extends Model
         'Preliminares' => 'Preliminares',
         'Cuartos' => 'Cuartos',
         'Semifinales' => 'Semifinales',
-        'Semifinal' => 'Semifinales',
         'Final' => 'Final',
     ];
 
