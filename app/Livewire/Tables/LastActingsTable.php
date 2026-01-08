@@ -2,12 +2,12 @@
 
 namespace App\Livewire\Tables;
 
-use App\Models\GroupActing;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Str;
-use Rappasoft\LaravelLivewireTables\DataTableComponent;
-use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
+use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Builder;
+use App\Models\GroupActing;
 
 class LastActingsTable extends DataTableComponent
 {
@@ -97,6 +97,6 @@ class LastActingsTable extends DataTableComponent
 
     public function builder(): Builder
     {
-        return GroupActing::query()->select('*')->orderBy('created_at', 'desc');
+        return GroupActing::query()->select('*')->where('year', date('Y'))->orderBy('created_at', 'desc');
     }
 }
