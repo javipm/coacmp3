@@ -25,6 +25,7 @@ class LastActingsTable extends DataTableComponent
         $this->setPaginationVisibilityStatus(false);
 
         $this->setDefaultSort('updated_at', 'desc');
+        $this->setEmptyMessage('Todavía no se han subido audios de este año. Permanece atento a los próximos días!.');
 
         //Style
         $this->setTableWrapperAttributes([
