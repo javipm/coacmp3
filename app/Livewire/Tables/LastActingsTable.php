@@ -23,6 +23,7 @@ class LastActingsTable extends DataTableComponent
         $this->setPerPageAccepted([16]);
         $this->setPerPage(16);
         $this->setPaginationVisibilityStatus(false);
+        $this->setSortingPillsStatus(false);
 
         $this->setDefaultSort('updated_at', 'desc');
         $this->setEmptyMessage('Todavía no se han subido audios de este año. Permanece atento a los próximos días!.');
@@ -98,6 +99,6 @@ class LastActingsTable extends DataTableComponent
 
     public function builder(): Builder
     {
-        return GroupActing::query()->select('*')->whereYear('created_at', now()->year)->orderBy('created_at', 'desc');
+        return GroupActing::query()->select('*')->orderBy('created_at', 'desc');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ModalityResource\Pages;
 use App\Models\Modality;
 use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -15,7 +15,7 @@ class ModalityResource extends Resource
 {
     protected static ?string $model = Modality::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-list-bullet';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-tag';
 
     protected static ?string $modelLabel = 'modalidad';
 
@@ -25,11 +25,11 @@ class ModalityResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\Section::make()->columns(2)->schema([
+                \Filament\Schemas\Components\Section::make()->columns(2)->schema([
                     Forms\Components\TextInput::make('name')
                         ->label('Nombre')
                         ->unique(table: Modality::class, ignoreRecord: true)
@@ -42,7 +42,7 @@ class ModalityResource extends Resource
                         ->hiddenOn('create'),
                     Forms\Components\RichEditor::make('description')->label('Descripción')->columnSpan('full'),
                 ]),
-                Forms\Components\Section::make('SEO')->schema([
+                \Filament\Schemas\Components\Section::make('SEO')->schema([
                     SEO::make(),
                 ])->hiddenOn('create'),
             ]);
@@ -52,18 +52,22 @@ class ModalityResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable(),
-                Tables\Columns\TextColumn::make('slug')->label('URL'),
+                \Filament\Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('slug')->label('URL'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                \Filament\Actions\EditAction::make(),
             ])
-            ->bulkActions([])
+            ->bulkActions([
+                \Filament\Actions\BulkActionGroup::make([
+                    \Filament\Actions\DeleteBulkAction::make(),
+                ]),
+            ])
             ->emptyStateActions([
-                Tables\Actions\CreateAction::make(),
+                \Filament\Actions\CreateAction::make(),
             ]);
     }
 

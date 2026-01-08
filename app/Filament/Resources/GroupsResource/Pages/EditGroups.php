@@ -22,8 +22,8 @@ class EditGroups extends EditRecord
                 ->label('Scrapear información')
                 ->color('info')
                 ->form([
-                    Forms\Components\Placeholder::make('')->content('Desde esta opción podemos re-scrapear la info del grupo. Por defecto busca por el nombre de la agrupación.'),
-                    Forms\Components\Placeholder::make('')->content('Lo más recomendable es editar el nombre de la agrupación y poner el correcto, pero puedes poner la URL de la página de donde quieres obtener los datos.'),
+                    Forms\Components\Placeholder::make('scrape_info')->content('Desde esta opción podemos re-scrapear la info del grupo. Por defecto busca por el nombre de la agrupación.'),
+                    Forms\Components\Placeholder::make('scrape_advice')->content('Lo más recomendable es editar el nombre de la agrupación y poner el correcto, pero puedes poner la URL de la página de donde quieres obtener los datos.'),
                     Forms\Components\TextInput::make('url')
                         ->label('URL')
                         ->activeUrl()

@@ -7,7 +7,7 @@ use App\Filament\Resources\GroupsResource\RelationManagers;
 use App\Models\Group;
 use App\Models\Modality;
 use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -17,7 +17,7 @@ class GroupsResource extends Resource
 {
     protected static ?string $model = Group::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-musical-note';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-user-group';
 
     protected static ?string $modelLabel = 'grupo';
 
@@ -29,13 +29,13 @@ class GroupsResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
-    protected static ?string $navigationGroup = 'Audios';
+    protected static string | \UnitEnum | null $navigationGroup = 'Agrupaciones';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\Section::make()->columns(3)->schema([
+                \Filament\Schemas\Components\Section::make()->columns(3)->schema([
                     Forms\Components\TextInput::make('name')
                         ->label('Nombre')
                         ->unique(table: Group::class, ignoreRecord: true)
@@ -80,7 +80,7 @@ class GroupsResource extends Resource
                         ->inline(false),
                     Forms\Components\RichEditor::make('description')->label('Descripción')->columnSpan('full'),
                 ]),
-                Forms\Components\Section::make('SEO')->schema([
+                \Filament\Schemas\Components\Section::make('SEO')->schema([
                     SEO::make(),
                 ])->hiddenOn('create'),
             ]);
@@ -124,15 +124,15 @@ class GroupsResource extends Resource
                     ->options(Group::all()->pluck('year', 'year')),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                \Filament\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                \Filament\Actions\BulkActionGroup::make([
+                    \Filament\Actions\DeleteBulkAction::make(),
                 ]),
             ])
             ->emptyStateActions([
-                Tables\Actions\CreateAction::make(),
+                \Filament\Actions\CreateAction::make(),
             ]);
     }
 
