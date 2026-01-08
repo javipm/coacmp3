@@ -97,6 +97,6 @@ class LastActingsTable extends DataTableComponent
 
     public function builder(): Builder
     {
-        return GroupActing::query()->select('*')->where('year', date('Y'))->orderBy('created_at', 'desc');
+        return GroupActing::query()->select('*')->where('created_at', '>=', now()->year)->orderBy('created_at', 'desc');
     }
 }
